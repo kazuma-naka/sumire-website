@@ -1,0 +1,20 @@
+{
+  "name": "sumire-public-website",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "pnpm build && wrangler pages dev dist --ip 127.0.0.1 --port 8788",
+    "db:migrate:local": "wrangler d1 migrations apply sumire-requests --local",
+    "db:migrate:remote": "wrangler d1 migrations apply sumire-requests --remote",
+    "deploy": "pnpm build && wrangler pages deploy dist"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

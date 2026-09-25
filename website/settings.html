@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#fcfbff">
+  <meta name="description" content="Sumire Android アプリの設定を、説明・初期値・選択肢・対象エディションから検索できます。">
+  <title>設定ガイド — Sumire</title><link rel="stylesheet" href="/css/site.css"><script src="/js/site.js" defer></script><script src="/js/settings.js" defer></script>
+</head>
+<body><a class="skip-link" href="#main">本文へ移動</a>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="/" aria-label="Sumire ホーム"><span class="brand-mark" aria-hidden="true">す</span><span class="brand-name">Sumire<span> Android keyboard</span></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="メニューを開く"><span></span><span></span></button><nav class="primary-nav" id="primary-nav" aria-label="メインナビゲーション"><a href="/">ホーム</a><a href="/features.html">機能</a><a href="/settings.html" aria-current="page">設定ガイド</a><a href="/requests.html">要望・不具合</a></nav></div></header>
+  <main id="main" class="wrap page-main settings-main">
+    <header class="page-heading"><p class="eyebrow">SETTINGS GUIDE</p><h1>設定ガイド</h1><p>設定の目的、初期値、選択肢や範囲、対象エディションを項目ごとに確認できます。設定名や説明、選択肢で検索できます。</p></header>
+    <section class="settings-app" aria-label="設定一覧">
+      <aside class="settings-sidebar"><h2>カテゴリ</h2><label class="sr-only" for="settings-category">カテゴリで絞り込む</label><select id="settings-category"><option value="">すべてのカテゴリ</option></select><p class="sidebar-hint">項目名を選ぶとアプリ内の該当設定に移動します。</p></aside>
+      <div class="settings-content">
+        <div class="settings-toolbar">
+          <label class="search-wrap"><span class="sr-only">設定を検索</span><span aria-hidden="true" class="search-icon">⌕</span><input type="search" id="settings-search" placeholder="設定を検索（例：変換、辞書、フリック）" autocomplete="off"></label>
+          <label class="edition-select">エディション<select id="settings-edition"><option value="all">すべて</option><option value="full">Full で利用可能</option><option value="lite">Lite で利用可能</option><option value="full-only">Full のみ</option></select></label>
+        </div>
+        <div class="results-heading"><h2 id="results-title">すべての設定</h2><p id="settings-count" role="status" aria-live="polite">設定を読み込んでいます…</p></div>
+        <p class="settings-source-note">初期値・選択肢・範囲は、Android ソース内の設定定義から整理しています。端末によって生成・選択肢が変わる設定には、その旨を記載しています。</p>
+        <div id="settings-list" class="settings-list" aria-busy="true"></div>
+        <div id="settings-error" class="notice notice-error" hidden>設定情報を読み込めませんでした。ページを再読み込みしてください。</div>
+      </div>
+    </section>
+    <aside class="source-card"><div><p class="eyebrow">SOURCE</p><h2>アプリのソースを確認</h2><p>このガイドは Sumire Android リポジトリの <code>pref_*.xml</code> と <code>AppPreference.kt</code> を中心に作成しています。動的な設定値は関連する Kotlin 設定クラスでも確認しています。</p><p class="source-revision" id="source-revision">読み込み中…</p></div><a class="button button-light" id="source-link" href="https://github.com/KazumaProject/JapaneseKeyboard" target="_blank" rel="noopener noreferrer">確認したソース ↗</a></aside>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="brand brand-footer" href="/"><span class="brand-mark" aria-hidden="true">す</span><span class="brand-name">Sumire<span> Android keyboard</span></span></a><p>Android 日本語キーボード Sumire</p><div class="footer-links"><a href="/requests.html">投稿について</a><a href="https://github.com/KazumaProject/JapaneseKeyboard" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></footer>
+</body></html>

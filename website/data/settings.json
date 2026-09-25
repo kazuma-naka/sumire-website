@@ -1,0 +1,6762 @@
+{
+  "source": {
+    "repository": "https://github.com/KazumaProject/JapaneseKeyboard",
+    "commit": "131d0d4e568f893891115090deb98c4e7980a1cf",
+    "verifiedOn": "2026-09-25",
+    "resources": [
+      "app/src/main/res/xml/pref_*.xml",
+      "app/src/main/java/com/kazumaproject/markdownhelperkeyboard/setting_activity/AppPreference.kt",
+      "app/src/main/java/com/kazumaproject/markdownhelperkeyboard/ime_service/composing_guide/ComposingGuideSettings.kt",
+      "app/src/main/java/com/kazumaproject/markdownhelperkeyboard/setting_activity/ui/setting/GemmaPreferenceFragment.kt",
+      "app/src/main/java/com/kazumaproject/markdownhelperkeyboard/setting_activity/ui/setting/SplitKeyboardPreferenceFragment.kt",
+      "app/src/main/java/com/kazumaproject/markdownhelperkeyboard/ime_service/state/KeyboardType.kt"
+    ]
+  },
+  "items": [
+    {
+      "key": "custom_romaji_preference",
+      "title": "ローマ字変換のカスタマイズ",
+      "category": "詳細設定",
+      "group": "general",
+      "kind": "action",
+      "purpose": "ローマ字の変換表を作成、選択します",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_advanced.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "conversion_key_long_press_ai_conversion_preference",
+      "title": "変換キー長押しで AI 変換候補を追加する",
+      "category": "AI変換",
+      "group": "full",
+      "kind": "switch",
+      "purpose": "変換キーを長押ししたときに、zenz の推論結果を変換候補に追加します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full only",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_ai_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "candidate_view_height_setting_fragment_preference",
+      "title": "変換欄の高さ(縦画面)",
+      "category": "候補欄",
+      "group": "conversion",
+      "kind": "action",
+      "purpose": "変換候補を表示するレイアウトの高さの設定ができます",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_candidate_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "candidate_view_height_landscape_setting_fragment_preference",
+      "title": "変換欄の高さ(横画面)",
+      "category": "候補欄",
+      "group": "conversion",
+      "kind": "action",
+      "purpose": "変換候補を表示するレイアウトの高さの設定ができます",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_candidate_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "candidate_column_preference",
+      "title": "変換候補の列数",
+      "category": "候補欄",
+      "group": "conversion",
+      "kind": "list",
+      "purpose": "変換候補を表示するときの列数を設定します",
+      "values": [
+        "1列",
+        "2列",
+        "3列"
+      ],
+      "options": [
+        {
+          "label": "1列",
+          "value": "1"
+        },
+        {
+          "label": "2列",
+          "value": "2"
+        },
+        {
+          "label": "3列",
+          "value": "3"
+        }
+      ],
+      "default": "1列",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_candidate_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "candidate_column_landscape_preference",
+      "title": "変換候補の列数(横画面)",
+      "category": "候補欄",
+      "group": "conversion",
+      "kind": "list",
+      "purpose": "変換候補を表示するときの列数を設定します",
+      "values": [
+        "1列",
+        "2列",
+        "3列"
+      ],
+      "options": [
+        {
+          "label": "1列",
+          "value": "1"
+        },
+        {
+          "label": "2列",
+          "value": "2"
+        },
+        {
+          "label": "3列",
+          "value": "3"
+        }
+      ],
+      "default": "1列",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_candidate_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "candidate_tab_visibility_preference",
+      "title": "変換候補タブ",
+      "category": "候補欄",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "変換候補ビューの上部に「予測」「変換」「英数・カナ」の切り替えタブを表示します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_candidate_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "candidate_tab_order_preference",
+      "title": "候補タブの並び順",
+      "category": "候補欄",
+      "group": "conversion",
+      "kind": "action",
+      "purpose": "候補タブの表示順を変更します",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "candidate_tab_visibility_preference",
+      "source": "app/src/main/res/xml/pref_candidate_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "hide_candidate_password_preference",
+      "title": "パスワード入力時の変換候補",
+      "category": "候補欄",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "パスワード入力時の変換候補 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_candidate_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "n_best_preference",
+      "title": "N-Best",
+      "category": "変換候補",
+      "group": "conversion",
+      "kind": "range",
+      "purpose": "表示する変換候補の最大数を設定します。",
+      "values": [
+        "2〜16"
+      ],
+      "options": [],
+      "default": "4",
+      "range": {
+        "min": "2",
+        "max": "16",
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_candidate_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "conversion_bunsetsu_separation_preference",
+      "title": "変換キーで文節を分割",
+      "category": "変換候補",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "変換キーを押すと、入力中の文字列を分割し、最初の文節を選択状態にします。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_candidate_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "conversion_bunsetsu_cursor_move_preference",
+      "title": "左右キーで文節を移動",
+      "category": "変換候補",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "文節変換中に左右のカーソルキーでフォーカスする文節を移動します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "conversion_bunsetsu_separation_preference",
+      "source": "app/src/main/res/xml/pref_candidate_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "reconversion_preference",
+      "title": "読みを戻す",
+      "category": "変換候補",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "候補が空のときに「読みを戻す」ボタンを表示し、直前に確定した読みを PreEdit に戻せます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_candidate_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "henkan_delete_key_action_preference",
+      "title": "候補ハイライト時の削除キー動作",
+      "category": "変換候補",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "候補ハイライト時の削除キー動作 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_candidate_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "conversion_candidates_romaji_enable_preference",
+      "title": "ローマ字変換候補を表示",
+      "category": "変換候補",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "ローマ字の変換候補を末尾に追加します",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_candidate_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "live_conversion_preference",
+      "title": "ライブ変換 β",
+      "category": "変換候補",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "ライブ変換 β の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_candidate_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "live_conversion_start_length_preference",
+      "title": "ライブ変換の開始文字数",
+      "category": "変換候補",
+      "group": "conversion",
+      "kind": "range",
+      "purpose": "入力文字数がこの値以上になったらライブ変換を開始します。",
+      "values": [
+        "1〜10"
+      ],
+      "options": [],
+      "default": "1",
+      "range": {
+        "min": "1",
+        "max": "10",
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "live_conversion_preference",
+      "source": "app/src/main/res/xml/pref_candidate_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "live_conversion_candidate_yomi_preference",
+      "title": "ライブ変換候補に読みを表示",
+      "category": "変換候補",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "ライブ変換候補に読みを表示 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "live_conversion_preference",
+      "source": "app/src/main/res/xml/pref_candidate_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "enable_typo_correction_japanese_flick_keyboard_preference",
+      "title": "フリック（日本語）",
+      "category": "タイピングミス補正",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "フリック入力でミスを検知した場合、補正した変換候補を表示します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_candidate_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "enable_typo_correction_japanese_flick_keyboard_offset_score_preference",
+      "title": "タイピングミス補正のしきい値",
+      "category": "タイピングミス補正",
+      "group": "conversion",
+      "kind": "range",
+      "purpose": "日本語フリック入力でのタイピングミス補正の強さを設定します。数値を大きくするほど、補正は弱くなります。(デフォルト：3000)",
+      "values": [
+        "0〜5000"
+      ],
+      "options": [],
+      "default": "3000",
+      "range": {
+        "min": "0",
+        "max": "5000",
+        "step": "10"
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_candidate_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "enable_typo_correction_qwerty_english_keyboard_preference",
+      "title": "QWERTY（英語）",
+      "category": "タイピングミス補正",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "QWERTY入力でミスを検知した場合、補正した候補を表示します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_candidate_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "omission_search_preference",
+      "title": "修飾キー省略入力",
+      "category": "タイピングミス補正",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "修飾キー省略入力 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_candidate_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "omission_search_preference_offset_score_preference",
+      "title": "修飾キー省略入力のしきい値",
+      "category": "タイピングミス補正",
+      "group": "conversion",
+      "kind": "range",
+      "purpose": "修飾キー省略入力補正の強さを設定します。数値を大きくするほど、補正は弱くなります。(デフォルト: 1900)",
+      "values": [
+        "0〜5000"
+      ],
+      "options": [],
+      "default": "1900",
+      "range": {
+        "min": "0",
+        "max": "5000",
+        "step": "10"
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_candidate_conversion.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "clipboard_history_preference_fragment",
+      "title": "クリップボードの履歴",
+      "category": "クリップボードの履歴",
+      "group": "tools",
+      "kind": "action",
+      "purpose": "クリップボードの履歴を表示",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_clipboard_shortcut.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "clipboard_preview_enable_preference",
+      "title": "クリップボードの内容を変換欄に表示",
+      "category": "クリップボードの履歴",
+      "group": "tools",
+      "kind": "switch",
+      "purpose": "クリップボードにコピーした文字や画像を検知したとき、変換欄に表示します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_clipboard_shortcut.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "clipboard_preview_tap_delete_preference",
+      "title": "クリップボード タップで候補から削除",
+      "category": "クリップボードの履歴",
+      "group": "tools",
+      "kind": "switch",
+      "purpose": "クリップボード項目をタップしたとき、変換欄から削除します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "clipboard_preview_enable_preference",
+      "source": "app/src/main/res/xml/pref_clipboard_shortcut.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "clipboard_delete_unpinned_after_hours_preference",
+      "title": "ピン留めしていない項目を自動削除",
+      "category": "クリップボードの履歴",
+      "group": "tools",
+      "kind": "switch",
+      "purpose": "オンにすると、ピン留めしていないクリップボード項目を指定時間後に削除します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_clipboard_shortcut.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "clipboard_unpinned_retention_hours_preference",
+      "title": "削除までの時間",
+      "category": "クリップボードの履歴",
+      "group": "tools",
+      "kind": "range",
+      "purpose": "ピン留めしていないクリップボード項目を保持する時間を選択します。",
+      "values": [
+        "1〜72"
+      ],
+      "options": [],
+      "default": "1",
+      "range": {
+        "min": "1",
+        "max": "72",
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "clipboard_delete_unpinned_after_hours_preference",
+      "source": "app/src/main/res/xml/pref_clipboard_shortcut.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "shortcut_toolbar_visibility_preference",
+      "title": "ショートカットツールバー",
+      "category": "ショートカットツールバー",
+      "group": "tools",
+      "kind": "switch",
+      "purpose": "絵文字キーボードへの切り替えなどの便利なショートカットアイコンを含むツールバーを表示します",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_clipboard_shortcut.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "shortcut_toolbar_integrated_in_suggestion_preference",
+      "title": "ショートカットを候補欄に統合",
+      "category": "ショートカットツールバー",
+      "group": "tools",
+      "kind": "switch",
+      "purpose": "入力中でないとき、クリップボードプレビューやAI選択アクションを表示していない場合に、ショートカットアイコンを候補欄に表示します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "shortcut_toolbar_visibility_preference",
+      "source": "app/src/main/res/xml/pref_clipboard_shortcut.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "shortcut_toolbar_item_preference",
+      "title": "ショートカットツールバーのカスタマイズ",
+      "category": "ショートカットツールバー",
+      "group": "tools",
+      "kind": "action",
+      "purpose": "ツールバーに表示するアイコンを編集する画面を開きます",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_clipboard_shortcut.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "shortcut_toolbar_size_setting_fragment_preference",
+      "title": "ショートカットツールバーのサイズ",
+      "category": "ショートカットツールバー",
+      "group": "tools",
+      "kind": "action",
+      "purpose": "ショートカットツールバーの高さとアイコンサイズを調整します",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_clipboard_shortcut.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "symbol_mode_preference",
+      "title": "記号キーボードの初期画面",
+      "category": "記号キーボード",
+      "group": "tools",
+      "kind": "list",
+      "purpose": "記号キーボードの初期画面を選択します",
+      "values": [
+        "絵文字",
+        "顔文字",
+        "記号",
+        "クリップボード履歴"
+      ],
+      "options": [
+        {
+          "label": "絵文字",
+          "value": "EMOJI"
+        },
+        {
+          "label": "顔文字",
+          "value": "EMOTICON"
+        },
+        {
+          "label": "記号",
+          "value": "SYMBOL"
+        },
+        {
+          "label": "クリップボード履歴",
+          "value": "CLIPBOARD"
+        }
+      ],
+      "default": "絵文字",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_clipboard_shortcut.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "default_emoji_skin_tone_preference",
+      "title": "絵文字のデフォルト肌色",
+      "category": "記号キーボード",
+      "group": "tools",
+      "kind": "list",
+      "purpose": "肌色変更に対応した絵文字の表示色を選択します。",
+      "values": [
+        "デフォルト",
+        "明るい",
+        "やや明るい",
+        "中間",
+        "やや暗い",
+        "暗い"
+      ],
+      "options": [
+        {
+          "label": "デフォルト",
+          "value": "default"
+        },
+        {
+          "label": "明るい",
+          "value": "1F3FB"
+        },
+        {
+          "label": "やや明るい",
+          "value": "1F3FC"
+        },
+        {
+          "label": "中間",
+          "value": "1F3FD"
+        },
+        {
+          "label": "やや暗い",
+          "value": "1F3FE"
+        },
+        {
+          "label": "暗い",
+          "value": "1F3FF"
+        }
+      ],
+      "default": "デフォルト",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_clipboard_shortcut.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "inline_suggestion_enabled_preference",
+      "title": "インライン候補（自動入力）を使用",
+      "category": "インライン候補",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "インライン候補（自動入力）を使用 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common.xml",
+      "alsoIn": [
+        "pref_common_legacy.xml"
+      ]
+    },
+    {
+      "key": "app_setting_language_preference",
+      "title": "設定で表示する言語",
+      "category": "言語",
+      "group": "general",
+      "kind": "switch",
+      "purpose": "設定で表示する言語 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "false",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_general_info.xml"
+      ]
+    },
+    {
+      "key": "pref_backup_export",
+      "title": "設定をエクスポート",
+      "category": "設定のバックアップ",
+      "group": "general",
+      "kind": "action",
+      "purpose": "現在の設定をバックアップファイルとして保存します",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_general_info.xml"
+      ]
+    },
+    {
+      "key": "pref_backup_import",
+      "title": "設定をインポート",
+      "category": "設定のバックアップ",
+      "group": "general",
+      "kind": "action",
+      "purpose": "バックアップファイルから設定を復元します。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_general_info.xml"
+      ]
+    },
+    {
+      "key": "keyboard_selection_preference",
+      "title": "キーボードの選択",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "action",
+      "purpose": "キーボードの追加、削除ができます",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_input_method.xml"
+      ]
+    },
+    {
+      "key": "keyboard_screen_preference",
+      "title": "位置とサイズの設定(縦画面)",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "action",
+      "purpose": "キーボードの位置とサイズの設定を変更できます",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_screen_landscape_preference",
+      "title": "位置とサイズの設定(横画面)",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "action",
+      "purpose": "キーボードの位置とサイズの設定を変更できます",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "allow_fullscreen_mode_preference",
+      "title": "横画面で全画面入力を許可",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "横画面で、Androidが必要と判断した場合に入力画面を全画面表示します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "@bool/config_allow_fullscreen_mode",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "composing_guide_text_enabled",
+      "title": "未確定文字のフロート表示",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "未確定文字のフロート表示 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "false",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "composing_guide_show_live_reading",
+      "title": "ライブ変換時の読みを表示",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "ライブ変換時の読みを表示 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "false",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "composing_guide_text_enabled",
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "composing_guide_text_size_setting",
+      "title": "文字サイズ",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "range",
+      "purpose": "未確定文字を表示するフロートガイドの文字サイズを調整します。",
+      "values": [
+        "18〜56 sp"
+      ],
+      "options": [],
+      "default": "28 sp",
+      "range": {
+        "min": "18",
+        "max": "56",
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "composing_guide_text_enabled",
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoVerifiedIn": [
+        "app/src/main/java/com/kazumaproject/markdownhelperkeyboard/ime_service/composing_guide/ComposingGuideSettings.kt"
+      ],
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "composing_guide_enabled",
+      "title": "候補欄のフロート表示",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "候補タブ・クリップボード・自動入力・ショートカットを含む候補欄全体をフロートで表示します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "false",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "composing_guide_scroll_direction",
+      "title": "候補のスクロール方向",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "list",
+      "purpose": "選択肢から 候補のスクロール方向 を選びます。",
+      "values": [
+        "横スクロール",
+        "折り返し・縦スクロール"
+      ],
+      "options": [
+        {
+          "label": "横スクロール",
+          "value": "horizontal"
+        },
+        {
+          "label": "折り返し・縦スクロール",
+          "value": "vertical"
+        }
+      ],
+      "default": "折り返し・縦スクロール",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "composing_guide_enabled",
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "composing_guide_display_mode",
+      "title": "両方有効時の表示方法",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "list",
+      "purpose": "選択肢から 両方有効時の表示方法 を選びます。",
+      "values": [
+        "統合表示",
+        "分離表示"
+      ],
+      "options": [
+        {
+          "label": "統合表示",
+          "value": "integrated"
+        },
+        {
+          "label": "分離表示",
+          "value": "separate"
+        }
+      ],
+      "default": "統合表示",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "composing_guide_text_reset",
+      "title": "未確定文字フロートの位置とサイズをリセット",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "action",
+      "purpose": "未確定文字フロートの位置とサイズをリセット の専用設定画面を開きます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "composing_guide_candidates_reset",
+      "title": "候補欄フロートの位置とサイズをリセット",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "action",
+      "purpose": "候補欄フロートの位置とサイズをリセット の専用設定画面を開きます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "composing_guide_integrated_reset",
+      "title": "統合フロートの位置とサイズをリセット",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "action",
+      "purpose": "統合フロートの位置とサイズをリセット の専用設定画面を開きます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_floating_preference",
+      "title": "フローティングキーボード",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "キーボードを移動可能なフローティング表示にします",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "landscape_force_qwerty_preference",
+      "title": "横画面では常に QWERTY に切り替える",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "端末が横画面のとき、一時的に QWERTY キーボードへ切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "landscape_force_qwerty_romaji_preference",
+      "title": "横画面 QWERTY の入力モード",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "横画面 QWERTY の入力モード の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "landscape_force_qwerty_preference",
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_key_letter_size_fragment_preference",
+      "title": "キー・変換候補の文字サイズ",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "action",
+      "purpose": "変換候補に表示される文字の大きさを設定できます",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_background_image_select_preference",
+      "title": "キーボード背景画像",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "action",
+      "purpose": "ファイルから画像を選択してキーボード背景に設定します。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_background_image_display_mode_preference",
+      "title": "背景画像の表示方法",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "list",
+      "purpose": "背景画像の表示方法を選択します。",
+      "values": [
+        "フィット",
+        "中央トリミング"
+      ],
+      "options": [
+        {
+          "label": "フィット",
+          "value": "fit"
+        },
+        {
+          "label": "中央トリミング",
+          "value": "center_crop"
+        }
+      ],
+      "default": "フィット",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_background_image_clear_preference",
+      "title": "キーボード背景画像を解除",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "action",
+      "purpose": "設定した画像を解除してテーマ背景に戻します。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_background_video_select_preference",
+      "title": "キーボード背景動画",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "action",
+      "purpose": "ファイルから動画を選択してキーボード背景に設定します。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_background_video_quality_preference",
+      "title": "背景動画の画質",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "list",
+      "purpose": "背景動画の再生画質を選択します。",
+      "values": [
+        "高画質",
+        "標準",
+        "低画質"
+      ],
+      "options": [
+        {
+          "label": "高画質",
+          "value": "high"
+        },
+        {
+          "label": "標準",
+          "value": "medium"
+        },
+        {
+          "label": "低画質",
+          "value": "low"
+        }
+      ],
+      "default": "高画質",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_background_video_clear_preference",
+      "title": "キーボード背景動画を解除",
+      "category": "キーボード",
+      "group": "input",
+      "kind": "action",
+      "purpose": "設定した動画を解除し、背景画像またはテーマ背景に戻します。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_touch_effect_type_preference",
+      "title": "タッチエフェクト",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "list",
+      "purpose": "キーボードに触れた時に表示する視覚エフェクトを選択します。",
+      "values": [
+        "なし",
+        "リキッドインク",
+        "オーロラインク",
+        "水面の波紋",
+        "スプレーペイント",
+        "光の膜",
+        "シネマティックウェーブ"
+      ],
+      "options": [
+        {
+          "label": "なし",
+          "value": "none"
+        },
+        {
+          "label": "リキッドインク",
+          "value": "liquid_ink"
+        },
+        {
+          "label": "オーロラインク",
+          "value": "aurora_ink"
+        },
+        {
+          "label": "水面の波紋",
+          "value": "liquid_ripple"
+        },
+        {
+          "label": "スプレーペイント",
+          "value": "spray_paint"
+        },
+        {
+          "label": "光の膜",
+          "value": "luminous_blob"
+        },
+        {
+          "label": "シネマティックウェーブ",
+          "value": "cinematic_wave"
+        }
+      ],
+      "default": "なし",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_touch_effect_quality_preference",
+      "title": "タッチエフェクト品質",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "list",
+      "purpose": "キーボードのタッチエフェクトの描画品質を選択します。",
+      "values": [
+        "標準",
+        "高画質",
+        "最高画質",
+        "極限"
+      ],
+      "options": [
+        {
+          "label": "標準",
+          "value": "balanced"
+        },
+        {
+          "label": "高画質",
+          "value": "high"
+        },
+        {
+          "label": "最高画質",
+          "value": "ultra"
+        },
+        {
+          "label": "極限",
+          "value": "extreme"
+        }
+      ],
+      "default": "高画質",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_touch_effect_color_mode_preference",
+      "title": "エフェクトの色",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "list",
+      "purpose": "タッチエフェクトの色の選び方を設定します。",
+      "values": [
+        "タッチごとにランダム",
+        "指定色",
+        "パレット",
+        "テーマ色"
+      ],
+      "options": [
+        {
+          "label": "タッチごとにランダム",
+          "value": "random"
+        },
+        {
+          "label": "指定色",
+          "value": "fixed"
+        },
+        {
+          "label": "パレット",
+          "value": "palette"
+        },
+        {
+          "label": "テーマ色",
+          "value": "theme"
+        }
+      ],
+      "default": "タッチごとにランダム",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_touch_effect_color_preference",
+      "title": "エフェクトの指定色",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "action",
+      "purpose": "指定色モードで使用するエフェクト色を選択します。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_touch_effect_palette_preference",
+      "title": "エフェクトのパレット",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "list",
+      "purpose": "スプレーペイントで使用する見た目と動きのモデルを選択します。",
+      "values": [
+        "スプレー",
+        "ペンキスプラッシュ",
+        "グラフィティ",
+        "液体ペンキ",
+        "花が舞い散る"
+      ],
+      "options": [
+        {
+          "label": "スプレー",
+          "value": "spray"
+        },
+        {
+          "label": "ペンキスプラッシュ",
+          "value": "paint_splash"
+        },
+        {
+          "label": "グラフィティ",
+          "value": "graffiti"
+        },
+        {
+          "label": "液体ペンキ",
+          "value": "liquid_paint"
+        },
+        {
+          "label": "花が舞い散る",
+          "value": "flower_petals"
+        }
+      ],
+      "default": "SprayPaintSettings.PALETTE_PAINT_SPLASH",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_touch_effect_liquid_ink_density_preference",
+      "title": "リキッドインクの濃さ",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "range",
+      "purpose": "リキッドインクの表示濃度を調整します。100%で標準です。",
+      "values": [
+        "50〜300"
+      ],
+      "options": [],
+      "default": "100",
+      "range": {
+        "min": "50",
+        "max": "300",
+        "step": "5"
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_touch_effect_aurora_ink_density_preference",
+      "title": "オーロラインクの濃さ",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "range",
+      "purpose": "オーロラインクの表示濃度を調整します。100%で標準です。",
+      "values": [
+        "50〜300"
+      ],
+      "options": [],
+      "default": "100",
+      "range": {
+        "min": "50",
+        "max": "300",
+        "step": "5"
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_touch_effect_cinematic_wave_color_mode_preference",
+      "title": "ウェーブの色",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "list",
+      "purpose": "シネマティックウェーブのパレットの選び方を設定します。",
+      "values": [
+        "シネマティックランダム",
+        "カスタム"
+      ],
+      "options": [
+        {
+          "label": "シネマティックランダム",
+          "value": "cinematic_random"
+        },
+        {
+          "label": "カスタム",
+          "value": "custom"
+        }
+      ],
+      "default": "CinematicWaveSettings.COLOR_MODE_CINEMATIC_RANDOM",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_touch_effect_cinematic_wave_type_preference",
+      "title": "ウェーブのタイプ",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "list",
+      "purpose": "ウェーブの見た目のタイプを選択します。",
+      "values": [
+        "オーロラ膜",
+        "シルキーサインウェーブ",
+        "プリズムサインウェーブ",
+        "スペクトラムサインウェーブ",
+        "ビビッドスペクトラム"
+      ],
+      "options": [
+        {
+          "label": "オーロラ膜",
+          "value": "aurora_membrane"
+        },
+        {
+          "label": "シルキーサインウェーブ",
+          "value": "silk_sine"
+        },
+        {
+          "label": "プリズムサインウェーブ",
+          "value": "prismatic_sine"
+        },
+        {
+          "label": "スペクトラムサインウェーブ",
+          "value": "spectrum_sine"
+        },
+        {
+          "label": "ビビッドスペクトラム",
+          "value": "chroma_fold"
+        }
+      ],
+      "default": "CinematicWaveSettings.WAVE_TYPE_AURORA_MEMBRANE",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_touch_effect_cinematic_wave_primary_color_preference",
+      "title": "メインカラー",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "action",
+      "purpose": "メインの発光色を選択します。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_touch_effect_cinematic_wave_secondary_color_auto_preference",
+      "title": "サブカラーを自動生成",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "switch",
+      "purpose": "メインカラーに合うサブカラーを自動生成します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_touch_effect_cinematic_wave_secondary_color_preference",
+      "title": "サブカラー",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "action",
+      "purpose": "補助の発光色を選択します。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_touch_effect_cinematic_wave_opacity_percent_preference",
+      "title": "透明度",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "range",
+      "purpose": "キーボード上での波の見え方を調整します。",
+      "values": [
+        "18〜68"
+      ],
+      "options": [],
+      "default": "46",
+      "range": {
+        "min": "18",
+        "max": "68",
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_touch_effect_cinematic_wave_intensity_percent_preference",
+      "title": "強さ",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "range",
+      "purpose": "発光と波のコントラストを調整します。",
+      "values": [
+        "35〜180"
+      ],
+      "options": [],
+      "default": "100",
+      "range": {
+        "min": "35",
+        "max": "180",
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_touch_effect_cinematic_wave_motion_preference",
+      "title": "動き",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "list",
+      "purpose": "光の膜が流れる速さを選択します。",
+      "values": [
+        "穏やか",
+        "上品",
+        "ダイナミック"
+      ],
+      "options": [
+        {
+          "label": "穏やか",
+          "value": "calm"
+        },
+        {
+          "label": "上品",
+          "value": "elegant"
+        },
+        {
+          "label": "ダイナミック",
+          "value": "dynamic"
+        }
+      ],
+      "default": "上品",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_touch_effect_cinematic_wave_touch_response_preference",
+      "title": "タッチ反応",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "list",
+      "purpose": "タッチ時の歪みの深さを選択します。",
+      "values": [
+        "控えめ",
+        "標準",
+        "深い"
+      ],
+      "options": [
+        {
+          "label": "控えめ",
+          "value": "subtle"
+        },
+        {
+          "label": "標準",
+          "value": "normal"
+        },
+        {
+          "label": "深い",
+          "value": "deep"
+        }
+      ],
+      "default": "標準",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_touch_effect_cinematic_wave_quality_preference",
+      "title": "描画品質",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "list",
+      "purpose": "シネマティックウェーブの描画品質を選択します。",
+      "values": [
+        "省電力",
+        "標準",
+        "シネマティック"
+      ],
+      "options": [
+        {
+          "label": "省電力",
+          "value": "battery_saver"
+        },
+        {
+          "label": "標準",
+          "value": "balanced"
+        },
+        {
+          "label": "シネマティック",
+          "value": "cinematic"
+        }
+      ],
+      "default": "標準",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "round_corner_keyboard_preference",
+      "title": "キーボードの角を丸くする",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "switch",
+      "purpose": "オンにすると、キーボード枠の四隅が丸くなります",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_corner_radius_dp_preference",
+      "title": "キーボードの角丸半径",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "range",
+      "purpose": "キーボード背景の角丸の大きさを調整します。",
+      "values": [
+        "0〜64"
+      ],
+      "options": [],
+      "default": "32",
+      "range": {
+        "min": "0",
+        "max": "64",
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "round_corner_keyboard_preference",
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_corner_top_left_preference",
+      "title": "左上を角丸にする",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "switch",
+      "purpose": "左上を角丸にする の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "round_corner_keyboard_preference",
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_corner_top_right_preference",
+      "title": "右上を角丸にする",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "switch",
+      "purpose": "右上を角丸にする の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "round_corner_keyboard_preference",
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_corner_bottom_left_preference",
+      "title": "左下を角丸にする",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "switch",
+      "purpose": "左下を角丸にする の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "round_corner_keyboard_preference",
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "keyboard_corner_bottom_right_preference",
+      "title": "右下を角丸にする",
+      "category": "タッチエフェクト",
+      "group": "general",
+      "kind": "switch",
+      "purpose": "右下を角丸にする の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "round_corner_keyboard_preference",
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_keyboard_display.xml"
+      ]
+    },
+    {
+      "key": "conversion_beam_width_preference",
+      "title": "変換探索幅",
+      "category": "変換候補",
+      "group": "conversion",
+      "kind": "range",
+      "purpose": "かな漢字変換の探索中に保持するラティスノード数を設定します。デフォルトは20です。",
+      "values": [
+        "1〜100"
+      ],
+      "options": [],
+      "default": "20",
+      "range": {
+        "min": "1",
+        "max": "100",
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_dictionary.xml"
+      ]
+    },
+    {
+      "key": "incognito_mode_detection_preference",
+      "title": "シークレットモードの検知",
+      "category": "変換候補",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "シークレットモードの検知 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml"
+    },
+    {
+      "key": "show_learned_candidates_in_incognito_preference",
+      "title": "シークレットモード中の学習済み候補",
+      "category": "変換候補",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "シークレットモード中の学習済み候補 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml"
+    },
+    {
+      "key": "zero_query_suggestion_preference",
+      "title": "確定後の後続語候補",
+      "category": "変換候補",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "確定後の後続語候補 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_dictionary.xml"
+      ]
+    },
+    {
+      "key": "flick_input_only_preference",
+      "title": "フリック・トグル入力",
+      "category": "フリック入力",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "フリック・トグル入力 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_operation_feedback.xml"
+      ]
+    },
+    {
+      "key": "time_same_pronounce_typing_preference",
+      "title": "入力待機時間",
+      "category": "フリック入力",
+      "group": "input",
+      "kind": "range",
+      "purpose": "トグル入力で次の入力を待つ時間（ミリ秒）",
+      "values": [
+        "1〜1000"
+      ],
+      "options": [],
+      "default": "1000",
+      "range": {
+        "min": "1",
+        "max": "1000",
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_operation_feedback.xml"
+      ]
+    },
+    {
+      "key": "flick_editor_preview_preference",
+      "title": "入力欄でフリック文字をプレビュー",
+      "category": "フリック入力",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "入力欄でフリック文字をプレビュー の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_operation_feedback.xml"
+      ]
+    },
+    {
+      "key": "flick_sensitivity_preference",
+      "title": "フリック入力の感度",
+      "category": "フリック入力",
+      "group": "input",
+      "kind": "range",
+      "purpose": "フリック入力の感度 の値を調整します。",
+      "values": [
+        "1〜200"
+      ],
+      "options": [],
+      "default": "100",
+      "range": {
+        "min": "1",
+        "max": "200",
+        "step": "5"
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_operation_feedback.xml"
+      ]
+    },
+    {
+      "key": "flick_threshold_shape_preference",
+      "title": "フリック判定領域",
+      "category": "フリック入力",
+      "group": "input",
+      "kind": "list",
+      "purpose": "選択肢から フリック判定領域 を選びます。",
+      "values": [
+        "全方向で均一（円形・推奨）",
+        "斜め入力を安定（矩形）"
+      ],
+      "options": [
+        {
+          "label": "全方向で均一（円形・推奨）",
+          "value": "radial"
+        },
+        {
+          "label": "斜め入力を安定（矩形）",
+          "value": "rectangular"
+        }
+      ],
+      "default": "FlickThresholdShape.Radial.preferenceValue",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_operation_feedback.xml"
+      ]
+    },
+    {
+      "key": "type_null_input_behavior_preference",
+      "title": "TYPE_NULL 入力欄の動作",
+      "category": "機能",
+      "group": "general",
+      "kind": "list",
+      "purpose": "選択肢から TYPE_NULL 入力欄の動作 を選びます。",
+      "values": [
+        "デフォルト（直接入力）",
+        "常に直接入力",
+        "ComposingText を使う"
+      ],
+      "options": [
+        {
+          "label": "デフォルト（直接入力）",
+          "value": "default"
+        },
+        {
+          "label": "常に直接入力",
+          "value": "direct_commit"
+        },
+        {
+          "label": "ComposingText を使う",
+          "value": "composing_text"
+        }
+      ],
+      "default": "デフォルト（直接入力）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_input_method.xml"
+      ]
+    },
+    {
+      "key": "delete_key_flick_left_preference",
+      "title": "削除キーの左フリック",
+      "category": "機能",
+      "group": "general",
+      "kind": "switch",
+      "purpose": "削除キーを左にフリックすると、カーソルの前にある特定の記号までの文字列もしくは全ての文字列をまとめて削除します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_operation_feedback.xml"
+      ]
+    },
+    {
+      "key": "delete_key_flick_left_targets_preference",
+      "title": "削除対象の記号",
+      "category": "機能",
+      "group": "general",
+      "kind": "action",
+      "purpose": "初期値: 。、！？「」『』ー.",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "delete_key_flick_left_preference",
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_operation_feedback.xml"
+      ]
+    },
+    {
+      "key": "delete_key_flick_up_preference",
+      "title": "削除キーの上フリック",
+      "category": "機能",
+      "group": "general",
+      "kind": "switch",
+      "purpose": "削除キーを上にフリックすると、カーソルより右側の文字を削除します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_operation_feedback.xml"
+      ]
+    },
+    {
+      "key": "delete_key_flick_down_preference",
+      "title": "削除キーの下フリック",
+      "category": "機能",
+      "group": "general",
+      "kind": "switch",
+      "purpose": "削除キーを下にフリックすると、直前の削除を元に戻します（Undo）。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_operation_feedback.xml"
+      ]
+    },
+    {
+      "key": "cursor_move_after_commit_target_pairs_preference",
+      "title": "確定後にカーソル移動する記号ペア",
+      "category": "機能",
+      "group": "general",
+      "kind": "action",
+      "purpose": "確定後にカーソルをペアの間へ移動する2文字ペアを設定します。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_operation_feedback.xml"
+      ]
+    },
+    {
+      "key": "undo_enable_preference",
+      "title": "元に戻す機能",
+      "category": "機能",
+      "group": "general",
+      "kind": "switch",
+      "purpose": "元に戻す機能を無効にする",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_operation_feedback.xml"
+      ]
+    },
+    {
+      "key": "space_key_preference",
+      "title": "半角スペースの利用",
+      "category": "機能",
+      "group": "general",
+      "kind": "switch",
+      "purpose": "入力モードに関わらず、常に半角スペースを使用します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_operation_feedback.xml"
+      ]
+    },
+    {
+      "key": "custom_direct_mode_space_hankaku_preference",
+      "title": "直接入力時に半角スペースを使用",
+      "category": "機能",
+      "group": "general",
+      "kind": "switch",
+      "purpose": "直接入力モードでPreEditに文字がない場合、スペースキーで半角スペースを入力します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_operation_feedback.xml"
+      ]
+    },
+    {
+      "key": "conversion_key_swipe_cursor_move_preference",
+      "title": "スペース長押しでカーソル移動",
+      "category": "機能",
+      "group": "general",
+      "kind": "switch",
+      "purpose": "未確定（プリエディット）入力中、スペースキーを長押しするとカーソルを移動します",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_operation_feedback.xml"
+      ]
+    },
+    {
+      "key": "save_last_used_keyboard",
+      "title": "最後に使ったキーボードを表示",
+      "category": "機能",
+      "group": "general",
+      "kind": "switch",
+      "purpose": "アプリ再起動時に、前回使用したキーボードを自動で表示します",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_operation_feedback.xml"
+      ]
+    },
+    {
+      "key": "vibration_preference",
+      "title": "バイブレーションの有無",
+      "category": "バイブレーション",
+      "group": "general",
+      "kind": "switch",
+      "purpose": "バイブレーションの有無 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_operation_feedback.xml"
+      ]
+    },
+    {
+      "key": "key_sound_preference",
+      "title": "キー押下音の有無",
+      "category": "バイブレーション",
+      "group": "general",
+      "kind": "switch",
+      "purpose": "キー押下音の有無 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_operation_feedback.xml"
+      ]
+    },
+    {
+      "key": "key_sound_volume_percent_preference",
+      "title": "キー押下音の音量",
+      "category": "バイブレーション",
+      "group": "general",
+      "kind": "range",
+      "purpose": "キー押下音の音量を設定します",
+      "values": [
+        "0〜100"
+      ],
+      "options": [],
+      "default": "0",
+      "range": {
+        "min": "0",
+        "max": "100",
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "key_sound_preference",
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_operation_feedback.xml"
+      ]
+    },
+    {
+      "key": "vibration_timing",
+      "title": "バイブレーションのタイミング",
+      "category": "バイブレーション",
+      "group": "general",
+      "kind": "list",
+      "purpose": "バイブレーションを発生させるタイミングを選択",
+      "values": [
+        "キー押下時",
+        "キーリリース時",
+        "両方"
+      ],
+      "options": [
+        {
+          "label": "キー押下時",
+          "value": "press"
+        },
+        {
+          "label": "キーリリース時",
+          "value": "release"
+        },
+        {
+          "label": "両方",
+          "value": "both"
+        }
+      ],
+      "default": "両方",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "vibration_preference",
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_operation_feedback.xml"
+      ]
+    },
+    {
+      "key": "long_press_timeout_preference",
+      "title": "長押し時間",
+      "category": "バイブレーション",
+      "group": "general",
+      "kind": "action",
+      "purpose": "長押しと判定するまでの時間を変更します。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_operation_feedback.xml"
+      ]
+    },
+    {
+      "key": "delete_long_press_conversion_behavior",
+      "title": "削除キー長押し時の変換方式",
+      "category": "バイブレーション",
+      "group": "general",
+      "kind": "list",
+      "purpose": "選択肢から 削除キー長押し時の変換方式 を選びます。",
+      "values": [
+        "スムーズ（推奨）：指を離した後に1回変換",
+        "従来方式：1文字削除するたびにライブ変換"
+      ],
+      "options": [
+        {
+          "label": "スムーズ（推奨）：指を離した後に1回変換",
+          "value": "deferred"
+        },
+        {
+          "label": "従来方式：1文字削除するたびにライブ変換",
+          "value": "continuous"
+        }
+      ],
+      "default": "スムーズ（推奨）：指を離した後に1回変換",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_operation_feedback.xml"
+      ]
+    },
+    {
+      "key": "preference_open_source",
+      "title": "使用した Open Source のライブラリ",
+      "category": "アプリについて",
+      "group": "general",
+      "kind": "action",
+      "purpose": "使用した Open Source のライブラリ の専用設定画面を開きます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_general_info.xml"
+      ]
+    },
+    {
+      "key": "app_version_preference",
+      "title": "アプリのバージョン",
+      "category": "アプリについて",
+      "group": "general",
+      "kind": "action",
+      "purpose": "アプリのバージョン の専用設定画面を開きます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_common_legacy.xml",
+      "alsoIn": [
+        "pref_general_info.xml"
+      ]
+    },
+    {
+      "key": "incremental_conversion_session_preference",
+      "title": "セッション型変換エンジン",
+      "category": "変換エンジン",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "セッション型変換エンジン の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_conversion_engine.xml"
+    },
+    {
+      "key": "japanese_prediction_enable_preference",
+      "title": "日本語の予測変換",
+      "category": "対象言語",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "入力した読みより長い日本語候補を表示します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_conversion_engine.xml"
+    },
+    {
+      "key": "english_prediction_enable_preference",
+      "title": "英語の予測変換",
+      "category": "対象言語",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "英語辞書の前方一致候補を表示します。OFFでも入力文字と大文字・小文字候補は残ります。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_conversion_engine.xml"
+    },
+    {
+      "key": "english_reading_dictionary_enable_preference",
+      "title": "英語読み辞書",
+      "category": "対象言語",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "「かー」から「car」のような英語候補を表示します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "true",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_conversion_engine.xml"
+    },
+    {
+      "key": "prediction_minimum_input_length_preference",
+      "title": "予測を開始する文字数",
+      "category": "予測変換",
+      "group": "conversion",
+      "kind": "range",
+      "purpose": "日本語辞書の前方一致予測を開始する入力文字数です。",
+      "values": [
+        "3〜8"
+      ],
+      "options": [],
+      "default": "3",
+      "range": {
+        "min": "3",
+        "max": "8",
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "japanese_prediction_enable_preference",
+      "source": "app/src/main/res/xml/pref_conversion_engine.xml"
+    },
+    {
+      "key": "system_prediction_candidate_limit_preference",
+      "title": "システム予測候補数",
+      "category": "予測変換",
+      "group": "conversion",
+      "kind": "range",
+      "purpose": "システム辞書とシステムユーザー辞書から追加する予測候補の最大数です。",
+      "values": [
+        "1〜16"
+      ],
+      "options": [],
+      "default": "4",
+      "range": {
+        "min": "1",
+        "max": "16",
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_conversion_engine.xml"
+    },
+    {
+      "key": "prediction_lookahead_preference",
+      "title": "先読み文字数",
+      "category": "予測変換",
+      "group": "conversion",
+      "kind": "range",
+      "purpose": "入力した読みに対して、何文字先までの予測候補を表示するかを設定します。",
+      "values": [
+        "1〜6"
+      ],
+      "options": [],
+      "default": "PREDICTION_LOOKAHEAD_CHARACTER_COUNT_DEFAULT",
+      "range": {
+        "min": "1",
+        "max": "6",
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "japanese_prediction_enable_preference",
+      "source": "app/src/main/res/xml/pref_conversion_engine.xml"
+    },
+    {
+      "key": "prediction_aggressiveness_preference",
+      "title": "予測の積極性",
+      "category": "予測変換",
+      "group": "conversion",
+      "kind": "list",
+      "purpose": "選択肢から 予測の積極性 を選びます。",
+      "values": [
+        "控えめ",
+        "標準",
+        "積極的"
+      ],
+      "options": [
+        {
+          "label": "控えめ",
+          "value": "conservative"
+        },
+        {
+          "label": "標準",
+          "value": "standard"
+        },
+        {
+          "label": "積極的",
+          "value": "aggressive"
+        }
+      ],
+      "default": "標準",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "japanese_prediction_enable_preference",
+      "source": "app/src/main/res/xml/pref_conversion_engine.xml"
+    },
+    {
+      "key": "system_dictionary_prediction_enable_preference",
+      "title": "システム辞書の予測変換",
+      "category": "候補ソース",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "内蔵システム辞書を日本語の前方一致予測に使用します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "japanese_prediction_enable_preference",
+      "source": "app/src/main/res/xml/pref_conversion_engine.xml"
+    },
+    {
+      "key": "system_user_dictionary_prediction_enable_preference",
+      "title": "システムユーザー辞書",
+      "category": "候補ソース",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "システムユーザー辞書から取り込んだ単語を前方一致予測に使用します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "japanese_prediction_enable_preference",
+      "source": "app/src/main/res/xml/pref_conversion_engine.xml"
+    },
+    {
+      "key": "reading_correction_prediction_enable_preference",
+      "title": "読み補正辞書",
+      "category": "候補ソース",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "読み補正辞書を前方一致予測に使用します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "japanese_prediction_enable_preference",
+      "source": "app/src/main/res/xml/pref_conversion_engine.xml"
+    },
+    {
+      "key": "proverb_prediction_enable_preference",
+      "title": "ことわざ辞書",
+      "category": "候補ソース",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "ことわざ辞書を前方一致予測に使用します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "japanese_prediction_enable_preference",
+      "source": "app/src/main/res/xml/pref_conversion_engine.xml"
+    },
+    {
+      "key": "external_mozc_prediction_enable_preference",
+      "title": "外部Mozc辞書",
+      "category": "候補ソース",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "有効な人名・地名・Wiki・NEologd・Web辞書を前方一致予測に使用します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "japanese_prediction_enable_preference",
+      "source": "app/src/main/res/xml/pref_conversion_engine.xml"
+    },
+    {
+      "key": "symbol_emoji_prediction_enable_preference",
+      "title": "記号・絵文字・顔文字",
+      "category": "候補ソース",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "記号、絵文字、顔文字の辞書を前方一致予測に使用します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "japanese_prediction_enable_preference",
+      "source": "app/src/main/res/xml/pref_conversion_engine.xml"
+    },
+    {
+      "key": "symbol_candidate_enable_preference",
+      "title": "記号の変換候補",
+      "category": "候補ソース",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "記号の変換候補を表示します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_conversion_engine.xml"
+    },
+    {
+      "key": "emoji_candidate_enable_preference",
+      "title": "絵文字の変換候補",
+      "category": "候補ソース",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "絵文字の変換候補を表示します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_conversion_engine.xml"
+    },
+    {
+      "key": "emoticon_candidate_enable_preference",
+      "title": "顔文字の変換候補",
+      "category": "候補ソース",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "顔文字の変換候補を表示します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_conversion_engine.xml"
+    },
+    {
+      "key": "custom_keyboard_size_preference",
+      "title": "文字サイズ",
+      "category": "カスタムキーボード",
+      "group": "input",
+      "kind": "action",
+      "purpose": "キーに表示される文字の大きさや、キーのサイズを調整できます。\\nこの設定はスミレキーボードにも適用されます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_custom.xml"
+    },
+    {
+      "key": "flick_keyboard_popup_view_style_preference",
+      "title": "タップ・フリック PopupView のサイズ",
+      "category": "カスタムキーボード",
+      "group": "input",
+      "kind": "action",
+      "purpose": "方向別・十字・サークル・2段/3段フリック PopupView のサイズと文字サイズを設定します",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_custom.xml",
+      "alsoIn": [
+        "pref_sumire.xml"
+      ]
+    },
+    {
+      "key": "custom_keyboard_two_words_preference",
+      "title": "２文字以上の出力を自動で確定",
+      "category": "カスタムキーボード",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "２文字以上の出力を自動で確定 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_custom.xml"
+    },
+    {
+      "key": "custom_keyboard_suggestion_preference",
+      "title": "未入力時の表示",
+      "category": "カスタムキーボード",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "未入力時の表示 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_custom.xml"
+    },
+    {
+      "key": "remember_last_custom_keyboard_preference",
+      "title": "最後に使用したカスタムキーボードを復元",
+      "category": "カスタムキーボード",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "最後に使用したカスタムキーボードを復元 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_custom.xml"
+    },
+    {
+      "key": "remember_custom_keyboard_input_mode_preference",
+      "title": "カスタムキーボードの入力モードを復元",
+      "category": "カスタムキーボード",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "カスタムキーボードの入力モードを復元 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_custom.xml"
+    },
+    {
+      "key": "flick_keymap_guide",
+      "title": "フリックガイドの表示",
+      "category": "カスタムキーボード",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "フリックキーの中央にタップ文字、上下左右にフリック文字を表示します",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_custom.xml"
+    },
+    {
+      "key": "flick_guide_text_size_sp_preference",
+      "title": "ガイド文字サイズ",
+      "category": "カスタムキーボード",
+      "group": "input",
+      "kind": "range",
+      "purpose": "フリックガイド文字のサイズを sp 単位で設定します",
+      "values": [
+        "6〜16"
+      ],
+      "options": [],
+      "default": "9",
+      "range": {
+        "min": "6",
+        "max": "16",
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "flick_keymap_guide",
+      "source": "app/src/main/res/xml/pref_custom.xml",
+      "alsoIn": [
+        "pref_sumire.xml"
+      ]
+    },
+    {
+      "key": "flick_guide_max_characters_preference",
+      "title": "ガイド最大文字数",
+      "category": "カスタムキーボード",
+      "group": "input",
+      "kind": "range",
+      "purpose": "各フリックガイドに表示する最大 code point 数を設定します",
+      "values": [
+        "1〜4"
+      ],
+      "options": [],
+      "default": "1",
+      "range": {
+        "min": "1",
+        "max": "4",
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "flick_keymap_guide",
+      "source": "app/src/main/res/xml/pref_custom.xml",
+      "alsoIn": [
+        "pref_sumire.xml"
+      ]
+    },
+    {
+      "key": "system_user_dictionary_builder_preference",
+      "title": "システムユーザー辞書の作成",
+      "category": "システムユーザー辞書",
+      "group": "dictionary",
+      "kind": "action",
+      "purpose": "ユーザー指定の単語からシステムユーザー辞書を作成します",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "external_dictionary_settings_preference",
+      "title": "外部辞書ファイル",
+      "category": "外部辞書ファイル",
+      "group": "dictionary",
+      "kind": "action",
+      "purpose": "内蔵辞書を選択した外部ファイルで置き換えます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "show_dictionary_candidate_labels_preference",
+      "title": "辞書候補のラベルを表示",
+      "category": "候補ラベル",
+      "group": "dictionary",
+      "kind": "switch",
+      "purpose": "学習辞書、ユーザー辞書、定型文の候補に「学習」「ユーザー」「定型」を表示します",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "suppress_hentaigana_candidates_preference",
+      "title": "変体仮名の候補を抑制",
+      "category": "候補表示",
+      "group": "dictionary",
+      "kind": "switch",
+      "purpose": "ON にすると、変換候補に変体仮名を表示しません。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "system_ngram_dictionary_enable_preference",
+      "title": "システムN-gram辞書を使用",
+      "category": "N-gram",
+      "group": "dictionary",
+      "kind": "switch",
+      "purpose": "システムN-gram辞書を使用 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "custom_ngram_dictionary_enable_preference",
+      "title": "カスタムN-gram辞書を使用",
+      "category": "N-gram",
+      "group": "dictionary",
+      "kind": "switch",
+      "purpose": "カスタムN-gram辞書を使用 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "n_gram_rule_preference",
+      "title": "N-gram補正",
+      "category": "N-gram",
+      "group": "dictionary",
+      "kind": "action",
+      "purpose": "変換結果を調整するための n-gram 補正ルールを追加します",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "candidate_order_override_enable_preference",
+      "title": "候補の並び替えを適用",
+      "category": "変換候補の表示順",
+      "group": "dictionary",
+      "kind": "switch",
+      "purpose": "候補の並び替えを適用 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "candidate_order_override_preference",
+      "title": "変換候補の表示順",
+      "category": "変換候補の表示順",
+      "group": "dictionary",
+      "kind": "action",
+      "purpose": "読みごとに変換候補の順番を設定します",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "ng_word_enable_preference",
+      "title": "ng word enable preference",
+      "category": "NG ワード",
+      "group": "dictionary",
+      "kind": "switch",
+      "purpose": "ng word enable preference の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "ng_word_preference",
+      "title": "非表示にする単語の一覧",
+      "category": "NG ワード",
+      "group": "dictionary",
+      "kind": "action",
+      "purpose": "非表示にする単語の一覧を表示",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "learn_dictionary_preference",
+      "title": "学習辞書",
+      "category": "学習辞書",
+      "group": "dictionary",
+      "kind": "switch",
+      "purpose": "学習辞書 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "learn_first_candidate_dictionary_preference",
+      "title": "先頭の変換候補を学習",
+      "category": "学習辞書",
+      "group": "dictionary",
+      "kind": "switch",
+      "purpose": "先頭の変換候補を選択したときに学習します",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "learn_dictionary_preference",
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "learn_dictionary_allow_mixed_symbols_numbers_preference",
+      "title": "記号・数字を含む日本語を学習",
+      "category": "学習辞書",
+      "group": "dictionary",
+      "kind": "switch",
+      "purpose": "「令和8年」などを学習します。記号・数字だけの候補は学習しません。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "learn_dictionary_preference",
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "enable_prediction_search_learn_dictionary_preference",
+      "title": "学習辞書で予測変換",
+      "category": "学習辞書",
+      "group": "dictionary",
+      "kind": "switch",
+      "purpose": "学習辞書を使った予測変換を有効にします",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "learn_dictionary_preference",
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "learn_prediction_preference",
+      "title": "予測変換",
+      "category": "学習辞書",
+      "group": "dictionary",
+      "kind": "range",
+      "purpose": "予測変換 の値を調整します。",
+      "values": [
+        "1〜8"
+      ],
+      "options": [],
+      "default": "4",
+      "range": {
+        "min": "1",
+        "max": "8",
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "enable_prediction_search_learn_dictionary_preference",
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "learn_dictionary_prediction_candidate_limit_preference",
+      "title": "予測候補数",
+      "category": "学習辞書",
+      "group": "dictionary",
+      "kind": "range",
+      "purpose": "学習辞書から前方一致で取得する予測候補の最大数です。",
+      "values": [
+        "1〜8"
+      ],
+      "options": [],
+      "default": "4",
+      "range": {
+        "min": "1",
+        "max": "8",
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "enable_prediction_search_learn_dictionary_preference",
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "user_dictionary_preference",
+      "title": "ユーザー辞書",
+      "category": "ユーザー辞書",
+      "group": "dictionary",
+      "kind": "switch",
+      "purpose": "ユーザー辞書 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "user_dictionary_prefix_match_number",
+      "title": "予測変換",
+      "category": "ユーザー辞書",
+      "group": "dictionary",
+      "kind": "range",
+      "purpose": "予測変換 の値を調整します。",
+      "values": [
+        "2〜8"
+      ],
+      "options": [],
+      "default": "2",
+      "range": {
+        "min": "2",
+        "max": "8",
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "user_dictionary_preference",
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "user_dictionary_prediction_candidate_limit_preference",
+      "title": "予測候補数",
+      "category": "ユーザー辞書",
+      "group": "dictionary",
+      "kind": "range",
+      "purpose": "ユーザー辞書から前方一致で取得する予測候補の最大数です。",
+      "values": [
+        "1〜8"
+      ],
+      "options": [],
+      "default": "4",
+      "range": {
+        "min": "1",
+        "max": "8",
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "user_dictionary_preference",
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "user_template_preference",
+      "title": "定型文",
+      "category": "定型文",
+      "group": "dictionary",
+      "kind": "switch",
+      "purpose": "定型文 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "text_macro_candidate_preference",
+      "title": "読み・選択候補に表示",
+      "category": "動的定型文（マクロ）",
+      "group": "dictionary",
+      "kind": "switch",
+      "purpose": "読み・選択候補に表示 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "custom_zero_query_dictionary_preference",
+      "title": "カスタム後続語辞書",
+      "category": "後続語候補",
+      "group": "dictionary",
+      "kind": "action",
+      "purpose": "確定した文字のあとに表示する後続語候補を作成します",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_dictionary.xml"
+    },
+    {
+      "key": "gemma_translation_enable_preference",
+      "title": "Gemma 4 を有効にする",
+      "category": "Gemma 翻訳",
+      "group": "full",
+      "kind": "switch",
+      "purpose": "Gemma 4 を有効にする の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full only",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_gemma.xml"
+    },
+    {
+      "key": "gemma_translation_backend_preference",
+      "title": "Gemma 実行バックエンド",
+      "category": "Gemma 翻訳",
+      "group": "full",
+      "kind": "list",
+      "purpose": "選択肢から Gemma 実行バックエンド を選びます。",
+      "values": [
+        "CPU のみ",
+        "GPU が使えれば GPU、無理なら CPU"
+      ],
+      "options": [
+        {
+          "label": "CPU のみ",
+          "value": "cpu"
+        },
+        {
+          "label": "GPU が使えれば GPU、無理なら CPU",
+          "value": "gpu_if_available"
+        }
+      ],
+      "default": "CPU のみ",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full only",
+      "dependency": "gemma_translation_enable_preference",
+      "source": "app/src/main/res/xml/pref_gemma.xml"
+    },
+    {
+      "key": "gemma_translation_target_language_preference",
+      "title": "翻訳先の言語",
+      "category": "Gemma 翻訳",
+      "group": "full",
+      "kind": "list",
+      "purpose": "選択肢から 翻訳先の言語 を選びます。",
+      "values": [
+        "英語",
+        "日本語",
+        "韓国語",
+        "中国語（簡体字）",
+        "中国語（繁体字）",
+        "スペイン語",
+        "フランス語",
+        "ドイツ語",
+        "イタリア語",
+        "ポルトガル語",
+        "ロシア語",
+        "アラビア語",
+        "ヒンディー語",
+        "インドネシア語",
+        "タイ語",
+        "ベトナム語",
+        "トルコ語",
+        "ポーランド語",
+        "オランダ語",
+        "ウクライナ語"
+      ],
+      "options": [
+        {
+          "label": "英語",
+          "value": "en"
+        },
+        {
+          "label": "日本語",
+          "value": "ja"
+        },
+        {
+          "label": "韓国語",
+          "value": "ko"
+        },
+        {
+          "label": "中国語（簡体字）",
+          "value": "zh-Hans"
+        },
+        {
+          "label": "中国語（繁体字）",
+          "value": "zh-Hant"
+        },
+        {
+          "label": "スペイン語",
+          "value": "es"
+        },
+        {
+          "label": "フランス語",
+          "value": "fr"
+        },
+        {
+          "label": "ドイツ語",
+          "value": "de"
+        },
+        {
+          "label": "イタリア語",
+          "value": "it"
+        },
+        {
+          "label": "ポルトガル語",
+          "value": "pt"
+        },
+        {
+          "label": "ロシア語",
+          "value": "ru"
+        },
+        {
+          "label": "アラビア語",
+          "value": "ar"
+        },
+        {
+          "label": "ヒンディー語",
+          "value": "hi"
+        },
+        {
+          "label": "インドネシア語",
+          "value": "id"
+        },
+        {
+          "label": "タイ語",
+          "value": "th"
+        },
+        {
+          "label": "ベトナム語",
+          "value": "vi"
+        },
+        {
+          "label": "トルコ語",
+          "value": "tr"
+        },
+        {
+          "label": "ポーランド語",
+          "value": "pl"
+        },
+        {
+          "label": "オランダ語",
+          "value": "nl"
+        },
+        {
+          "label": "ウクライナ語",
+          "value": "uk"
+        }
+      ],
+      "default": "英語",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full only",
+      "dependency": "gemma_translation_enable_preference",
+      "source": "app/src/main/res/xml/pref_gemma.xml"
+    },
+    {
+      "key": "gemma_model_selection_preference",
+      "title": "使用するモデル",
+      "category": "Gemma 翻訳",
+      "group": "full",
+      "kind": "list",
+      "purpose": "翻訳に使う、端末へ読み込まれた Gemma モデルを選びます。",
+      "values": [
+        "端末に読み込み済みの対応 Gemma モデル"
+      ],
+      "options": [],
+      "default": "固定の既定値なし。選択肢は読み込み済みモデルによって変わります。",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full only",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_gemma.xml",
+      "alsoVerifiedIn": [
+        "app/src/main/java/com/kazumaproject/markdownhelperkeyboard/setting_activity/ui/setting/GemmaPreferenceFragment.kt"
+      ]
+    },
+    {
+      "key": "gemma_translation_model_preference",
+      "title": "モデルを追加",
+      "category": "Gemma 翻訳",
+      "group": "full",
+      "kind": "action",
+      "purpose": "端末内の `.litertlm` モデルを追加します。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full only",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_gemma.xml"
+    },
+    {
+      "key": "gemma_supported_models_preference",
+      "title": "対応モデル情報",
+      "category": "Gemma 翻訳",
+      "group": "full",
+      "kind": "action",
+      "purpose": "Gemma 3 270M/1B、Gemma 3n E2B/E4B、Gemma 4 E2B/E4B、FunctionGemma 270M",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full only",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_gemma.xml"
+    },
+    {
+      "key": "gemma_prompt_template_management_preference",
+      "title": "Gemma アクション",
+      "category": "Gemma 翻訳",
+      "group": "full",
+      "kind": "action",
+      "purpose": "テキスト・画像・音声に使う指示を作成します",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full only",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_gemma.xml"
+    },
+    {
+      "key": "gemma_handwriting_auto_recognition_delay_preference",
+      "title": "自動認識までの時間",
+      "category": "手書きキーボード",
+      "group": "full",
+      "kind": "range",
+      "purpose": "自動認識までの時間 の値を調整します。",
+      "values": [
+        "300〜5000"
+      ],
+      "options": [],
+      "default": "GemmaHandwritingSettings.DEFAULT_AUTO_RECOGNITION_DELAY_MS.toInt()",
+      "range": {
+        "min": "300",
+        "max": "5000",
+        "step": "100"
+      },
+      "edition": "Full only",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_gemma.xml"
+    },
+    {
+      "key": "gemma_handwriting_pen_size_preference",
+      "title": "ペンの太さ",
+      "category": "手書きキーボード",
+      "group": "full",
+      "kind": "range",
+      "purpose": "ペンの太さ の値を調整します。",
+      "values": [
+        "1〜20"
+      ],
+      "options": [],
+      "default": "GemmaHandwritingSettings.DEFAULT_PEN_SIZE_DP",
+      "range": {
+        "min": "1",
+        "max": "20",
+        "step": "1"
+      },
+      "edition": "Full only",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_gemma.xml"
+    },
+    {
+      "key": "gemma_handwriting_pen_color_preference",
+      "title": "ペンの色",
+      "category": "手書きキーボード",
+      "group": "full",
+      "kind": "action",
+      "purpose": "ペンの色 の専用設定画面を開きます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full only",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_gemma.xml"
+    },
+    {
+      "key": "gemma_handwriting_recognition_language_preference",
+      "title": "認識言語",
+      "category": "手書きキーボード",
+      "group": "full",
+      "kind": "list",
+      "purpose": "選択肢から 認識言語 を選びます。",
+      "values": [
+        "自動判定（推奨）",
+        "英語",
+        "日本語",
+        "韓国語",
+        "中国語（簡体字）",
+        "中国語（繁体字）",
+        "スペイン語",
+        "フランス語",
+        "ドイツ語",
+        "イタリア語",
+        "ポルトガル語",
+        "ロシア語",
+        "アラビア語",
+        "ヒンディー語",
+        "インドネシア語",
+        "タイ語",
+        "ベトナム語",
+        "トルコ語",
+        "ポーランド語",
+        "オランダ語",
+        "ウクライナ語"
+      ],
+      "options": [
+        {
+          "label": "自動判定（推奨）",
+          "value": "auto"
+        },
+        {
+          "label": "英語",
+          "value": "en"
+        },
+        {
+          "label": "日本語",
+          "value": "ja"
+        },
+        {
+          "label": "韓国語",
+          "value": "ko"
+        },
+        {
+          "label": "中国語（簡体字）",
+          "value": "zh-Hans"
+        },
+        {
+          "label": "中国語（繁体字）",
+          "value": "zh-Hant"
+        },
+        {
+          "label": "スペイン語",
+          "value": "es"
+        },
+        {
+          "label": "フランス語",
+          "value": "fr"
+        },
+        {
+          "label": "ドイツ語",
+          "value": "de"
+        },
+        {
+          "label": "イタリア語",
+          "value": "it"
+        },
+        {
+          "label": "ポルトガル語",
+          "value": "pt"
+        },
+        {
+          "label": "ロシア語",
+          "value": "ru"
+        },
+        {
+          "label": "アラビア語",
+          "value": "ar"
+        },
+        {
+          "label": "ヒンディー語",
+          "value": "hi"
+        },
+        {
+          "label": "インドネシア語",
+          "value": "id"
+        },
+        {
+          "label": "タイ語",
+          "value": "th"
+        },
+        {
+          "label": "ベトナム語",
+          "value": "vi"
+        },
+        {
+          "label": "トルコ語",
+          "value": "tr"
+        },
+        {
+          "label": "ポーランド語",
+          "value": "pl"
+        },
+        {
+          "label": "オランダ語",
+          "value": "nl"
+        },
+        {
+          "label": "ウクライナ語",
+          "value": "uk"
+        }
+      ],
+      "default": "GemmaHandwritingLanguage.AUTO.preferenceValue",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full only",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_gemma.xml"
+    },
+    {
+      "key": "gemma_handwriting_additional_instruction_preference",
+      "title": "認識の追加ヒント（上級者向け）",
+      "category": "手書きキーボード",
+      "group": "full",
+      "kind": "text",
+      "purpose": "保護された標準プロンプトを使用しています",
+      "values": [
+        "テキスト入力"
+      ],
+      "options": [],
+      "default": "Blank",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full only",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_gemma.xml"
+    },
+    {
+      "key": "gemma_handwriting_reset_prompt_preference",
+      "title": "標準の認識プロンプトに戻す",
+      "category": "手書きキーボード",
+      "group": "full",
+      "kind": "action",
+      "purpose": "追加ヒントを消去し、保護された初期設定に戻します",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full only",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_gemma.xml"
+    },
+    {
+      "key": "physical_keyboard_input_mode_preference",
+      "title": "日本語入力方式",
+      "category": "物理キーボード",
+      "group": "input",
+      "kind": "list",
+      "purpose": "選択肢から 日本語入力方式 を選びます。",
+      "values": [
+        "ローマ字入力",
+        "かな入力"
+      ],
+      "options": [
+        {
+          "label": "ローマ字入力",
+          "value": "romaji"
+        },
+        {
+          "label": "かな入力",
+          "value": "kana"
+        }
+      ],
+      "default": "ローマ字入力",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_hardware_keyboard.xml"
+    },
+    {
+      "key": "physical_keyboard_shortcut_setting_preference",
+      "title": "物理キーボードショートカット",
+      "category": "物理キーボード",
+      "group": "input",
+      "kind": "action",
+      "purpose": "Ctrl+C、変換キー、無変換キー、Fキーなどにアクションを割り当てます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_hardware_keyboard.xml"
+    },
+    {
+      "key": "kana_keyboard_letter_size_preference",
+      "title": "文字のサイズ",
+      "category": "かな入力 レイアウトの設定",
+      "group": "input",
+      "kind": "action",
+      "purpose": "キーに表示する文字の大きさを調整します",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_kana.xml"
+    },
+    {
+      "key": "tenkey_popup_view_style_preference",
+      "title": "タップ・フリック PopupView のサイズ",
+      "category": "かな入力 レイアウトの設定",
+      "group": "input",
+      "kind": "action",
+      "purpose": "TenKey の PopupView サイズと文字サイズを設定します",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_kana.xml"
+    },
+    {
+      "key": "tenkey_show_switch_ime_button_preference",
+      "title": "IME 切り替えボタン",
+      "category": "かな入力 レイアウトの設定",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "キーボード切り替え（地球儀アイコン）ボタンを表示します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_kana.xml"
+    },
+    {
+      "key": "tenkey_kana_english_qwerty_preference",
+      "title": "英字入力は QWERTY",
+      "category": "かな入力 レイアウトの設定",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "英字入力時は QWERTY レイアウトを使用する",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_kana.xml"
+    },
+    {
+      "key": "tenkey_restore_input_mode_on_restart_preference",
+      "title": "キーボード再起動時に入力モードを復元",
+      "category": "かな入力 レイアウトの設定",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "TenKey を開き直したとき、最後に使用した日本語・英字・数字の入力モードを復元します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_kana.xml"
+    },
+    {
+      "key": "tenkey_restore_input_mode_only_within_time_preference",
+      "title": "指定時間内のみ TenKey の入力モードを復元",
+      "category": "かな入力 レイアウトの設定",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "有効にすると、指定時間内に TenKey を再表示した場合のみ最後の入力モードを復元します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "tenkey_restore_input_mode_on_restart_preference",
+      "source": "app/src/main/res/xml/pref_kana.xml"
+    },
+    {
+      "key": "tenkey_restore_input_mode_timeout_minutes_preference",
+      "title": "TenKey の復元時間",
+      "category": "かな入力 レイアウトの設定",
+      "group": "input",
+      "kind": "range",
+      "purpose": "TenKey の最後の入力モードを復元できる時間を分単位で設定します。",
+      "values": [
+        "1〜60"
+      ],
+      "options": [],
+      "default": "5",
+      "range": {
+        "min": "1",
+        "max": "60",
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "tenkey_restore_input_mode_only_within_time_preference",
+      "source": "app/src/main/res/xml/pref_kana.xml"
+    },
+    {
+      "key": "tenkey_use_three_state_keyboard_preference",
+      "title": "三状態キーボードの使用",
+      "category": "かな入力 レイアウトの設定",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "TenKey の切り替えキーで、日本語・英字・数字の3つの入力モードを切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_kana.xml"
+    },
+    {
+      "key": "tenkey_switch_number_to_qwerty_number_preference",
+      "title": "数字入力時にQWERTY数字キーボードを使用",
+      "category": "かな入力 レイアウトの設定",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "数字入力時にQWERTY数字キーボードを使用 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "tenkey_use_three_state_keyboard_preference",
+      "source": "app/src/main/res/xml/pref_kana.xml"
+    },
+    {
+      "key": "tenkey_keymap_guide",
+      "title": "日本語モードのキーガイド",
+      "category": "かな入力 レイアウトの設定",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "キーの上に入力の目安となるガイド文字を表示します",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_kana.xml"
+    },
+    {
+      "key": "tenkey_keymap_guide_english",
+      "title": "英語モードのキーガイド",
+      "category": "かな入力 レイアウトの設定",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "キーの上に入力の目安となるガイド文字を表示します",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_kana.xml"
+    },
+    {
+      "key": "tenkey_keymap_guide_number",
+      "title": "数字モードのキーガイド",
+      "category": "かな入力 レイアウトの設定",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "キーの上に入力の目安となるガイド文字を表示します",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_kana.xml"
+    },
+    {
+      "key": "tenkey_space_flick_preference",
+      "title": "スペースキーのフリック",
+      "category": "かな入力 レイアウトの設定",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "左フリックで、既存のスペース設定と反対の幅（半角・全角）の空白を入力します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "true",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_kana.xml"
+    },
+    {
+      "key": "qwerty_button_size_preference",
+      "title": "キーのサイズ",
+      "category": "QWERTY（共通）",
+      "group": "input",
+      "kind": "action",
+      "purpose": "キー、文字、特殊キーのアイコンサイズを変更します",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty.xml"
+    },
+    {
+      "key": "qwerty_popup_view_style_preference",
+      "title": "タップ・フリック PopupView のサイズ",
+      "category": "QWERTY（共通）",
+      "group": "input",
+      "kind": "action",
+      "purpose": "QWERTY/ローマ字のキー preview と長押し候補 PopupView のサイズと文字サイズを設定します",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty.xml"
+    },
+    {
+      "key": "switch_qwerty_keyboard_password_preference",
+      "title": "パスワード入力時",
+      "category": "QWERTY（共通）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "パスワード入力時 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty.xml"
+    },
+    {
+      "key": "qwerty_enable_flick_up_preference",
+      "title": "上フリックを有効にする",
+      "category": "QWERTY（共通）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "QWERTY キーで上方向のフリック入力を有効にします。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty.xml"
+    },
+    {
+      "key": "qwerty_enable_flick_down_preference",
+      "title": "下フリックを有効にする",
+      "category": "QWERTY（共通）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "下方向のフリック入力で大文字を入力します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty.xml"
+    },
+    {
+      "key": "qwerty_show_popup_window_preference",
+      "title": "ポップアップウィンドウの表示",
+      "category": "QWERTY（共通）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "ポップアップウィンドウの表示 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty.xml"
+    },
+    {
+      "key": "qwerty_show_cursor_buttons_preference",
+      "title": "カーソルボタン",
+      "category": "QWERTY（共通）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "カーソルボタン の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty.xml"
+    },
+    {
+      "key": "qwerty_show_kutouten_buttons_preference",
+      "title": "句読点ボタン",
+      "category": "QWERTY（共通）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "句読点ボタン の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty.xml"
+    },
+    {
+      "key": "qwerty_show_number_keys_buttons_preference",
+      "title": "数字キー",
+      "category": "QWERTY（共通）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "数字キー の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty.xml"
+    },
+    {
+      "key": "qwerty_number_key_flick_setting_preference",
+      "title": "数字キーのフリック設定",
+      "category": "QWERTY（共通）",
+      "group": "input",
+      "kind": "action",
+      "purpose": "QWERTY 数字キーの上・下フリックで出力する文字を設定します",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty.xml"
+    },
+    {
+      "key": "qwerty_show_switch_ime_button_preference",
+      "title": "IME 切り替えボタン",
+      "category": "QWERTY（共通）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "IME 切り替えボタン の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty.xml"
+    },
+    {
+      "key": "qwerty_show_emoji_button_preference",
+      "title": "絵文字ボタン",
+      "category": "QWERTY（共通）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "絵文字ボタン の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty.xml"
+    },
+    {
+      "key": "qwerty_show_switch_romaji_english_preference",
+      "title": "ローマ字/英語切り替えキー",
+      "category": "QWERTY（共通）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "キーボード上にローマ字入力と英語入力を切り替えるキー（あa）を表示します",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "ON",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty.xml"
+    },
+    {
+      "key": "qwerty_switch_number_key_without_number_preference",
+      "title": "数字キーボード切り替え時の入力モード",
+      "category": "QWERTY（共通）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "かなキーボード／スミレキーボードに切り替えるとき、数字キーボードではなく日本語入力モードに切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty.xml"
+    },
+    {
+      "key": "qwerty_glide_input_preference",
+      "title": "英語 QWERTY のグライド入力 β",
+      "category": "QWERTY（英語）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "英語 QWERTY キーボードで、指を滑らせた軌跡から英単語候補を表示します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty_english.xml"
+    },
+    {
+      "key": "qwerty_glide_commit_previous_candidate_on_new_glide_preference",
+      "title": "次のグライド開始時に前の候補を確定",
+      "category": "QWERTY（英語）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "グライド候補が入力中の状態で次のグライドを開始したとき、候補を置換せず現在の一番目候補を確定します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty_english.xml"
+    },
+    {
+      "key": "qwerty_glide_insert_space_after_committing_previous_candidate_preference",
+      "title": "前のグライド候補の確定後に空白を追加",
+      "category": "QWERTY（英語）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "次のグライド開始前に前の候補を確定するとき、後ろに半角スペースを追加します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty_english.xml"
+    },
+    {
+      "key": "qwerty_english_direct_input_preference",
+      "title": "英語 QWERTY は常に直接入力",
+      "category": "QWERTY（英語）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "QWERTY でローマ字入力を使用していないとき、入力候補を表示せず、入力した文字を直接確定します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty_english.xml"
+    },
+    {
+      "key": "qwerty_english_space_flick_preference",
+      "title": "スペースキーのフリック",
+      "category": "QWERTY（英語）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "上フリックで全角スペースを入力します。未確定文字がある場合は確定して全角スペースを挿入します。タップは半角スペースのままです。文字キーの上フリック設定とは独立しています。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "false",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty_english.xml"
+    },
+    {
+      "key": "qwerty_romaji_zenkaku_space_preference",
+      "title": "ローマ字キーボードの全角スペース",
+      "category": "QWERTY（ローマ字）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "オンにすると、ローマ字キーボードの空白キーで全角スペースを入力します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty_romaji.xml"
+    },
+    {
+      "key": "qwerty_romaji_hankaku_number_preference",
+      "title": "ローマ字入力時の半角数字",
+      "category": "QWERTY（ローマ字）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "オンにすると、ローマ字 QWERTY キーボードで数字を半角で入力します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty_romaji.xml"
+    },
+    {
+      "key": "qwerty_romaji_hankaku_symbol_preference",
+      "title": "ローマ字入力時の半角記号",
+      "category": "QWERTY（ローマ字）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "オンにすると、ローマ字 QWERTY キーボードで記号を半角で入力します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty_romaji.xml"
+    },
+    {
+      "key": "qwerty_show_keymap_symbols_romaji_preference",
+      "title": "記号キーマップの表示",
+      "category": "QWERTY（ローマ字）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "記号キーマップの表示 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty_romaji.xml"
+    },
+    {
+      "key": "qwerty_romaji_shift_conversion_preference",
+      "title": "Shift直後の1文字だけ大文字",
+      "category": "QWERTY（ローマ字）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "ローマ字入力で、Shiftキーを押した直後の最初の1文字のみをアルファベットの大文字にします。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty_romaji.xml"
+    },
+    {
+      "key": "qwerty_romaji_space_flick_preference",
+      "title": "スペースキーのフリック",
+      "category": "QWERTY（ローマ字）",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "上フリックで、既存のローマ字のスペース設定と反対の幅（半角・全角）の空白を入力します。文字キーの上フリック設定とは独立しています。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "false",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_qwerty_romaji.xml"
+    },
+    {
+      "key": "split_keyboard_main_type",
+      "title": "メインキーボード",
+      "category": "メインキーボード",
+      "group": "input",
+      "kind": "list",
+      "purpose": "分割表示のメイン側で使うキーボードを選びます。",
+      "values": [
+        "TenKey",
+        "50音 (Gojuon)",
+        "Sumire",
+        "QWERTY English",
+        "QWERTY Romaji",
+        "Custom layout"
+      ],
+      "options": [],
+      "default": "TenKey",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_split_keyboard.xml",
+      "alsoVerifiedIn": [
+        "app/src/main/java/com/kazumaproject/markdownhelperkeyboard/setting_activity/ui/setting/SplitKeyboardPreferenceFragment.kt",
+        "app/src/main/java/com/kazumaproject/markdownhelperkeyboard/ime_service/state/KeyboardType.kt"
+      ]
+    },
+    {
+      "key": "split_keyboard_main_custom",
+      "title": "カスタムレイアウト",
+      "category": "メインキーボード",
+      "group": "input",
+      "kind": "list",
+      "purpose": "メイン側で選択したカスタムキーボードのレイアウトを選びます。",
+      "values": [
+        "端末に作成または読み込み済みのカスタムキーボード"
+      ],
+      "options": [],
+      "default": "未選択。レイアウトを選ぶと保存されます。",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_split_keyboard.xml",
+      "alsoVerifiedIn": [
+        "app/src/main/java/com/kazumaproject/markdownhelperkeyboard/setting_activity/ui/setting/SplitKeyboardPreferenceFragment.kt"
+      ]
+    },
+    {
+      "key": "split_keyboard_sub_type",
+      "title": "サブキーボード",
+      "category": "サブキーボード",
+      "group": "input",
+      "kind": "list",
+      "purpose": "分割表示のサブ側で使うキーボードを選びます。",
+      "values": [
+        "TenKey",
+        "50音 (Gojuon)",
+        "Sumire",
+        "QWERTY English",
+        "QWERTY Romaji",
+        "Custom layout"
+      ],
+      "options": [],
+      "default": "TenKey",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_split_keyboard.xml",
+      "alsoVerifiedIn": [
+        "app/src/main/java/com/kazumaproject/markdownhelperkeyboard/setting_activity/ui/setting/SplitKeyboardPreferenceFragment.kt",
+        "app/src/main/java/com/kazumaproject/markdownhelperkeyboard/ime_service/state/KeyboardType.kt"
+      ]
+    },
+    {
+      "key": "split_keyboard_sub_custom",
+      "title": "カスタムレイアウト",
+      "category": "サブキーボード",
+      "group": "input",
+      "kind": "list",
+      "purpose": "サブ側で選択したカスタムキーボードのレイアウトを選びます。",
+      "values": [
+        "端末に作成または読み込み済みのカスタムキーボード"
+      ],
+      "options": [],
+      "default": "未選択。レイアウトを選ぶと保存されます。",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_split_keyboard.xml",
+      "alsoVerifiedIn": [
+        "app/src/main/java/com/kazumaproject/markdownhelperkeyboard/setting_activity/ui/setting/SplitKeyboardPreferenceFragment.kt"
+      ]
+    },
+    {
+      "key": "split_keyboard_candidates",
+      "title": "変換候補欄の表示",
+      "category": "サブキーボード",
+      "group": "input",
+      "kind": "list",
+      "purpose": "変換候補欄をメイン側、サブ側、または両方に表示します。",
+      "values": [
+        "メインとサブ",
+        "メインのみ",
+        "サブのみ"
+      ],
+      "options": [],
+      "default": "メインとサブ",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_split_keyboard.xml",
+      "alsoVerifiedIn": [
+        "app/src/main/java/com/kazumaproject/markdownhelperkeyboard/setting_activity/ui/setting/SplitKeyboardPreferenceFragment.kt"
+      ]
+    },
+    {
+      "key": "split_keyboard_edit_placement",
+      "title": "編集アイコンの表示",
+      "category": "サブキーボード",
+      "group": "input",
+      "kind": "list",
+      "purpose": "キーボード編集アイコンをメイン側だけ、または両方に表示します。",
+      "values": [
+        "メインのみ",
+        "メインとサブ"
+      ],
+      "options": [],
+      "default": "メインのみ",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_split_keyboard.xml",
+      "alsoVerifiedIn": [
+        "app/src/main/java/com/kazumaproject/markdownhelperkeyboard/setting_activity/ui/setting/SplitKeyboardPreferenceFragment.kt"
+      ]
+    },
+    {
+      "key": "sumire_keyboard_size_preference",
+      "title": "文字サイズ",
+      "category": "スミレ入力キーボード",
+      "group": "input",
+      "kind": "action",
+      "purpose": "キーに表示される文字の大きさや、キーのサイズを調整できます。\\nこの設定はカスタムキーボードにも適用されます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_sumire.xml"
+    },
+    {
+      "key": "flick_tfbi_flick_start_position_preference",
+      "title": "TFBiフリック開始位置",
+      "category": "スミレ入力キーボード",
+      "group": "input",
+      "kind": "list",
+      "purpose": "選択肢から TFBiフリック開始位置 を選びます。",
+      "values": [
+        "指を置いた位置を反映（従来）",
+        "キー中央から開始"
+      ],
+      "options": [
+        {
+          "label": "指を置いた位置を反映（従来）",
+          "value": "touch_point"
+        },
+        {
+          "label": "キー中央から開始",
+          "value": "key_center"
+        }
+      ],
+      "default": "TfbiFlickStartPositionMode.TOUCH_POINT.preferenceValue",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_sumire.xml"
+    },
+    {
+      "key": "sumire_input_method_preference",
+      "title": "キーの配置",
+      "category": "スミレ入力キーボード",
+      "group": "input",
+      "kind": "list",
+      "purpose": "選択肢から キーの配置 を選びます。",
+      "values": [
+        "トグル入力",
+        "フリック入力",
+        "カーソル入力"
+      ],
+      "options": [
+        {
+          "label": "トグル入力",
+          "value": "toggle"
+        },
+        {
+          "label": "フリック入力",
+          "value": "flick"
+        },
+        {
+          "label": "カーソル入力",
+          "value": "switch-mode-effective"
+        }
+      ],
+      "default": "トグル入力",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_sumire.xml"
+    },
+    {
+      "key": "sumire_keyboard_style_preference",
+      "title": "入力スタイル",
+      "category": "スミレ入力キーボード",
+      "group": "input",
+      "kind": "list",
+      "purpose": "選択肢から 入力スタイル を選びます。",
+      "values": [
+        "通常入力",
+        "サークル入力",
+        "２段フリック入力",
+        "３段フリック入力",
+        "中央開始ポインターフリック入力",
+        "ドーナツ入力"
+      ],
+      "options": [
+        {
+          "label": "通常入力",
+          "value": "default"
+        },
+        {
+          "label": "サークル入力",
+          "value": "circle"
+        },
+        {
+          "label": "２段フリック入力",
+          "value": "second-flick"
+        },
+        {
+          "label": "３段フリック入力",
+          "value": "third-flick"
+        },
+        {
+          "label": "中央開始ポインターフリック入力",
+          "value": "center-guide-flick"
+        },
+        {
+          "label": "ドーナツ入力",
+          "value": "sumire"
+        }
+      ],
+      "default": "通常入力",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_sumire.xml"
+    },
+    {
+      "key": "sumire_english_qwerty_preference",
+      "title": "英字入力は QWERTY",
+      "category": "スミレ入力キーボード",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "英字入力時は QWERTY レイアウトを使用する",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_sumire.xml"
+    },
+    {
+      "key": "sumire_restore_input_mode_on_restart_preference",
+      "title": "キーボード再起動時に入力モードを復元",
+      "category": "スミレ入力キーボード",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "Sumire を開き直したとき、最後に使用した日本語・英字・数字の入力モードを復元します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_sumire.xml"
+    },
+    {
+      "key": "sumire_restore_input_mode_only_within_time_preference",
+      "title": "指定時間内のみ Sumire の入力モードを復元",
+      "category": "スミレ入力キーボード",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "有効にすると、指定時間内に Sumire を再表示した場合のみ最後の入力モードを復元します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "sumire_restore_input_mode_on_restart_preference",
+      "source": "app/src/main/res/xml/pref_sumire.xml"
+    },
+    {
+      "key": "sumire_restore_input_mode_timeout_minutes_preference",
+      "title": "Sumire の復元時間",
+      "category": "スミレ入力キーボード",
+      "group": "input",
+      "kind": "range",
+      "purpose": "Sumire の最後の入力モードを復元できる時間を分単位で設定します。",
+      "values": [
+        "1〜60"
+      ],
+      "options": [],
+      "default": "5",
+      "range": {
+        "min": "1",
+        "max": "60",
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "sumire_restore_input_mode_only_within_time_preference",
+      "source": "app/src/main/res/xml/pref_sumire.xml"
+    },
+    {
+      "key": "sumire_keymap_guide_japanese",
+      "title": "日本語モードのキーガイド",
+      "category": "スミレ入力キーボード",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "フリックキーの中央にタップ文字、上下左右にフリック文字を表示します",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_sumire.xml"
+    },
+    {
+      "key": "sumire_keymap_guide_english",
+      "title": "英語モードのキーガイド",
+      "category": "スミレ入力キーボード",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "フリックキーの中央にタップ文字、上下左右にフリック文字を表示します",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_sumire.xml"
+    },
+    {
+      "key": "sumire_keymap_guide_number",
+      "title": "数字モードのキーガイド",
+      "category": "スミレ入力キーボード",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "フリックキーの中央にタップ文字、上下左右にフリック文字を表示します",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_sumire.xml"
+    },
+    {
+      "key": "sumire_custom_angle_preference",
+      "title": "ドーナツ入力の設定",
+      "category": "スミレ入力キーボード",
+      "group": "input",
+      "kind": "action",
+      "purpose": "フリックの角度を調整します。\\n変更の適応にはキーボードの再起動が必要です。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_sumire.xml"
+    },
+    {
+      "key": "hierarchical_flick_angle_margin_preference",
+      "title": "３段フリック入力の判定角度",
+      "category": "スミレ入力キーボード",
+      "group": "input",
+      "kind": "action",
+      "purpose": "隣り合う入力候補の境界角度を調整します",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_sumire.xml"
+    },
+    {
+      "key": "circular_slot_action_setting_preference",
+      "title": "Circular Flick SLOT4〜6 設定",
+      "category": "スミレ入力キーボード",
+      "group": "input",
+      "kind": "action",
+      "purpose": "日本語・英語・数字モードの通常キーに、追加フリックアクションを設定します",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_sumire.xml"
+    },
+    {
+      "key": "sumire_special_key_editor_preference",
+      "title": "特殊キー編集",
+      "category": "スミレ入力キーボード",
+      "group": "input",
+      "kind": "action",
+      "purpose": "Sumire の特殊キーの動作と配置を編集します",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_sumire.xml"
+    },
+    {
+      "key": "tablet_tenkey_kana_english_qwerty_preference",
+      "title": "タブレットの英字入力で QWERTY を使用",
+      "category": "タブレット",
+      "group": "input",
+      "kind": "switch",
+      "purpose": "タブレットの五十音配列と TenKey 配列の両方で、英字入力時に QWERTY レイアウトを使用します。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_tablet.xml"
+    },
+    {
+      "key": "utility_formula_candidate_enabled",
+      "title": "数式候補を表示",
+      "category": "計算",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "数式候補を表示 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "true",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_utility_candidate.xml"
+    },
+    {
+      "key": "utility_calculation_enabled",
+      "title": "計算候補を表示",
+      "category": "計算",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "計算候補を表示 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "true",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_utility_candidate.xml"
+    },
+    {
+      "key": "utility_expression_candidate_enabled",
+      "title": "式付き候補も表示",
+      "category": "計算",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "式付き候補も表示 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "true",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "utility_calculation_enabled",
+      "source": "app/src/main/res/xml/pref_utility_candidate.xml"
+    },
+    {
+      "key": "utility_angle_mode",
+      "title": "角度単位",
+      "category": "計算",
+      "group": "conversion",
+      "kind": "list",
+      "purpose": "選択肢から 角度単位 を選びます。",
+      "values": [
+        "度数法",
+        "ラジアン"
+      ],
+      "options": [
+        {
+          "label": "度数法",
+          "value": "degrees"
+        },
+        {
+          "label": "ラジアン",
+          "value": "radians"
+        }
+      ],
+      "default": "度数法",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "utility_calculation_enabled",
+      "source": "app/src/main/res/xml/pref_utility_candidate.xml"
+    },
+    {
+      "key": "utility_calculation_precision",
+      "title": "計算精度",
+      "category": "計算",
+      "group": "conversion",
+      "kind": "action",
+      "purpose": "計算精度 の専用設定画面を開きます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "utility_calculation_enabled",
+      "source": "app/src/main/res/xml/pref_utility_candidate.xml"
+    },
+    {
+      "key": "utility_unit_conversion_enabled",
+      "title": "単位換算候補を表示",
+      "category": "単位換算",
+      "group": "conversion",
+      "kind": "switch",
+      "purpose": "単位換算候補を表示 の有効・無効を切り替えます。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "true",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_utility_candidate.xml"
+    },
+    {
+      "key": "utility_regional_profile",
+      "title": "地域プロファイル",
+      "category": "単位換算",
+      "group": "conversion",
+      "kind": "list",
+      "purpose": "選択肢から 地域プロファイル を選びます。",
+      "values": [
+        "日本",
+        "米国",
+        "英国"
+      ],
+      "options": [
+        {
+          "label": "日本",
+          "value": "japan"
+        },
+        {
+          "label": "米国",
+          "value": "united_states"
+        },
+        {
+          "label": "英国",
+          "value": "united_kingdom"
+        }
+      ],
+      "default": "日本",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": "utility_unit_conversion_enabled",
+      "source": "app/src/main/res/xml/pref_utility_candidate.xml"
+    },
+    {
+      "key": "utility_targets_length",
+      "title": "長さ",
+      "category": "単位換算",
+      "group": "conversion",
+      "kind": "action",
+      "purpose": "長さ の専用設定画面を開きます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_utility_candidate.xml"
+    },
+    {
+      "key": "utility_targets_area",
+      "title": "面積",
+      "category": "単位換算",
+      "group": "conversion",
+      "kind": "action",
+      "purpose": "面積 の専用設定画面を開きます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_utility_candidate.xml"
+    },
+    {
+      "key": "utility_targets_volume",
+      "title": "体積",
+      "category": "単位換算",
+      "group": "conversion",
+      "kind": "action",
+      "purpose": "体積 の専用設定画面を開きます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_utility_candidate.xml"
+    },
+    {
+      "key": "utility_targets_mass",
+      "title": "質量",
+      "category": "単位換算",
+      "group": "conversion",
+      "kind": "action",
+      "purpose": "質量 の専用設定画面を開きます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_utility_candidate.xml"
+    },
+    {
+      "key": "utility_targets_temperature",
+      "title": "温度",
+      "category": "単位換算",
+      "group": "conversion",
+      "kind": "action",
+      "purpose": "温度 の専用設定画面を開きます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_utility_candidate.xml"
+    },
+    {
+      "key": "utility_targets_speed",
+      "title": "速度",
+      "category": "単位換算",
+      "group": "conversion",
+      "kind": "action",
+      "purpose": "速度 の専用設定画面を開きます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_utility_candidate.xml"
+    },
+    {
+      "key": "utility_targets_pressure",
+      "title": "圧力",
+      "category": "単位換算",
+      "group": "conversion",
+      "kind": "action",
+      "purpose": "圧力 の専用設定画面を開きます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_utility_candidate.xml"
+    },
+    {
+      "key": "utility_targets_energy",
+      "title": "エネルギー",
+      "category": "単位換算",
+      "group": "conversion",
+      "kind": "action",
+      "purpose": "エネルギー の専用設定画面を開きます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_utility_candidate.xml"
+    },
+    {
+      "key": "utility_targets_power",
+      "title": "仕事率",
+      "category": "単位換算",
+      "group": "conversion",
+      "kind": "action",
+      "purpose": "仕事率 の専用設定画面を開きます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_utility_candidate.xml"
+    },
+    {
+      "key": "utility_targets_time",
+      "title": "時間",
+      "category": "単位換算",
+      "group": "conversion",
+      "kind": "action",
+      "purpose": "時間 の専用設定画面を開きます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_utility_candidate.xml"
+    },
+    {
+      "key": "utility_targets_data",
+      "title": "データ",
+      "category": "単位換算",
+      "group": "conversion",
+      "kind": "action",
+      "purpose": "データ の専用設定画面を開きます。",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_utility_candidate.xml"
+    },
+    {
+      "key": "utility_reset_all",
+      "title": "すべての設定をリセット",
+      "category": "単位換算",
+      "group": "conversion",
+      "kind": "action",
+      "purpose": "計算・単位換算・数式候補を既定値へ戻します",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full and Lite",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_utility_candidate.xml"
+    },
+    {
+      "key": "enable_ai_conversion_zenz_preference",
+      "title": "AI による予測変換を有効にする",
+      "category": "zenz の設定",
+      "group": "full",
+      "kind": "switch",
+      "purpose": "ニューラルかな漢字モデル「zenz-v3.2-xsmall」を使った逐次的な予測変換を有効にします。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full only",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_zenz.xml"
+    },
+    {
+      "key": "enable_ai_conversion_zenzai_preference",
+      "title": "タイピング修正を有効にする",
+      "category": "zenz の設定",
+      "group": "full",
+      "kind": "switch",
+      "purpose": "タイピング修正を有効にしている場合は、zenz に渡す入力を「タイピング修正後の文字列」にします。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full only",
+      "dependency": "enable_ai_conversion_zenz_preference",
+      "source": "app/src/main/res/xml/pref_zenz.xml"
+    },
+    {
+      "key": "enable_zenz_rerank_preference",
+      "title": "zenz で変換候補を並び替える",
+      "category": "zenz の設定",
+      "group": "full",
+      "kind": "switch",
+      "purpose": "変換候補の上位を zenz のスコアで軽く並び替えます。既存の辞書スコアもあわせて利用します。タイピング修正とは併用できません。",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full only",
+      "dependency": "enable_ai_conversion_zenz_preference",
+      "source": "app/src/main/res/xml/pref_zenz.xml"
+    },
+    {
+      "key": "zenz_model_select_preference",
+      "title": "モデルの読み込み元",
+      "category": "zenz の設定",
+      "group": "full",
+      "kind": "action",
+      "purpose": "デフォルト（Assets）",
+      "values": [
+        "専用画面を開く（保存値なし）"
+      ],
+      "options": [],
+      "default": "該当なし（設定画面を開く操作）",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full only",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_zenz.xml"
+    },
+    {
+      "key": "zenz_profile_string_preference",
+      "title": "zenz で使用するプロフィールの設定",
+      "category": "zenz の設定",
+      "group": "full",
+      "kind": "text",
+      "purpose": "zenz が予測変換に利用するプロフィールを設定できます。\\n例：この欄に「職業：医者」と入力すると、「ちゅうしゃ」と入力したときに「注射」が候補に出やすくなります。",
+      "values": [
+        "テキスト入力"
+      ],
+      "options": [],
+      "default": "Blank",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full only",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_zenz.xml"
+    },
+    {
+      "key": "enable_zenz_right_context_preference",
+      "title": "右側の文脈を利用する",
+      "category": "zenz の設定",
+      "group": "full",
+      "kind": "switch",
+      "purpose": "カーソル右側の文脈を Zenz v3.2 の right context tag（U+EE07）として渡します",
+      "values": [
+        "ON",
+        "OFF"
+      ],
+      "options": [],
+      "default": "OFF",
+      "range": {
+        "min": null,
+        "max": null,
+        "step": null
+      },
+      "edition": "Full only",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_zenz.xml"
+    },
+    {
+      "key": "zenz_debounce_time_preference",
+      "title": "zenz の連続推論の待ち時間（デバウンス）",
+      "category": "zenz の設定",
+      "group": "full",
+      "kind": "range",
+      "purpose": "zenz の逐次的な変換の待ち時間を設定します。\\n設定を反映するにはキーボードの切り替えが必要です",
+      "values": [
+        "0〜1024"
+      ],
+      "options": [],
+      "default": "300",
+      "range": {
+        "min": "0",
+        "max": "1024",
+        "step": "10"
+      },
+      "edition": "Full only",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_zenz.xml"
+    },
+    {
+      "key": "zenz_maximum_letter_count_preference",
+      "title": "zenz の変換コンテキストの上限",
+      "category": "zenz の設定",
+      "group": "full",
+      "kind": "range",
+      "purpose": "おおよそ「コンテキスト数 × 1.4」文字までが変換対象となり、それを超えた文字は切り捨てられます。",
+      "values": [
+        "32〜128"
+      ],
+      "options": [],
+      "default": "32",
+      "range": {
+        "min": "32",
+        "max": "128",
+        "step": "5"
+      },
+      "edition": "Full only",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_zenz.xml"
+    },
+    {
+      "key": "zenz_maximum_context_count_preference",
+      "title": "zenz の最大のコンテキスト数",
+      "category": "zenz の設定",
+      "group": "full",
+      "kind": "range",
+      "purpose": "zenz が一度の変換で扱うコンテキスト（左文脈・入力などを含む）の最大トークン数を設定します。値を大きくするとより長い文脈を扱えますが、メモリ使用量や処理時間が増える場合があります。",
+      "values": [
+        "256〜1024"
+      ],
+      "options": [],
+      "default": "512",
+      "range": {
+        "min": "256",
+        "max": "1024",
+        "step": "10"
+      },
+      "edition": "Full only",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_zenz.xml"
+    },
+    {
+      "key": "zenz_maximum_thread_count_preference",
+      "title": "zenz が使用するスレッド数",
+      "category": "zenz の設定",
+      "group": "full",
+      "kind": "range",
+      "purpose": "zenz が変換処理に使用する CPU スレッド数を設定します。値を大きくすると変換は速くなりますが、CPU 使用率やバッテリー消費が増える場合があります。端末の性能に応じて調整してください。",
+      "values": [
+        "1〜8"
+      ],
+      "options": [],
+      "default": "4",
+      "range": {
+        "min": "1",
+        "max": "8",
+        "step": "1"
+      },
+      "edition": "Full only",
+      "dependency": null,
+      "source": "app/src/main/res/xml/pref_zenz.xml"
+    }
+  ]
+}

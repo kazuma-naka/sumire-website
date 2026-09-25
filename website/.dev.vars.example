@@ -1,0 +1,6 @@
+# Copy to .dev.vars for local development. Never use these values in production.
+TURNSTILE_SITE_KEY=replace-with-cloudflare-test-site-key
+TURNSTILE_SECRET=replace-with-cloudflare-test-secret
+TURNSTILE_HOSTNAMES=localhost,127.0.0.1
+TURNSTILE_TEST_MODE=true
+ADMIN_API_TOKEN=generate-a-local-only-random-token

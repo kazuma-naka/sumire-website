@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#fcfbff">
+  <meta name="description" content="Sumire の辞書単語、バグ報告、機能要望をアカウントなしで送信できます。公開は確認・承認後です。">
+  <title>要望・不具合 — Sumire</title><link rel="stylesheet" href="/css/site.css"><script src="/js/site.js" defer></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer></script><script src="/js/requests.js" defer></script>
+</head>
+<body><a class="skip-link" href="#main">本文へ移動</a>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="/" aria-label="Sumire ホーム"><span class="brand-mark" aria-hidden="true">す</span><span class="brand-name">Sumire<span> Android keyboard</span></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="メニューを開く"><span></span><span></span></button><nav class="primary-nav" id="primary-nav" aria-label="メインナビゲーション"><a href="/">ホーム</a><a href="/features.html">機能</a><a href="/settings.html">設定ガイド</a><a href="/requests.html" aria-current="page">要望・不具合</a></nav></div></header>
+  <main id="main" class="wrap page-main requests-main">
+    <header class="page-heading"><p class="eyebrow">REQUESTS &amp; FEEDBACK</p><h1>スミレへの投稿</h1><p>辞書への単語追加、不具合の報告、機能の提案を送れます。アカウント登録は不要です。内容を確認し、承認した投稿だけをこのページで公開します。</p></header>
+    <div class="privacy-note"><span class="privacy-icon" aria-hidden="true">✳</span><p>送信内容は審査のために保存されます。連絡先メールアドレスは任意で、公開されません。公開する際は、内容を確認して公開用の文章とステータスを設定します。</p></div>
+    <section class="request-panel" aria-labelledby="request-heading">
+      <h2 id="request-heading">投稿の種類を選ぶ</h2>
+      <div class="request-types" role="group" aria-label="投稿の種類">
+        <button type="button" class="request-type is-selected" data-kind="dictionary" aria-pressed="true"><span class="type-icon" aria-hidden="true">あ</span><span><strong>辞書に単語を追加</strong><small>単語と読みを送る</small></span></button>
+        <button type="button" class="request-type" data-kind="bug" aria-pressed="false"><span class="type-icon" aria-hidden="true">!</span><span><strong>不具合を報告</strong><small>起きたことと再現手順</small></span></button>
+        <button type="button" class="request-type" data-kind="feature" aria-pressed="false"><span class="type-icon" aria-hidden="true">＋</span><span><strong>機能を提案</strong><small>ほしい使い方を説明</small></span></button>
+      </div>
+      <form id="submission-form" class="submission-form" novalidate>
+        <div id="form-fields"></div>
+        <div class="form-field"><label for="contact-email">連絡先メールアドレス <span class="optional">任意・非公開</span></label><input type="email" id="contact-email" name="contactEmail" maxlength="254" autocomplete="email" placeholder="name@example.com"><small>確認事項がある場合に使用します。公開一覧には表示されません。</small></div>
+        <div class="turnstile-wrap"><div id="turnstile-widget" aria-label="スパム防止の確認"></div><p id="turnstile-hint" class="field-hint">スパム防止の確認を読み込んでいます…</p></div>
+        <div id="form-message" class="form-message" role="status" aria-live="polite" hidden></div>
+        <div class="form-submit-row"><p>投稿は確認後に公開されます。個人情報や秘密情報は入力しないでください。</p><button class="button button-primary" type="submit" id="submit-button" disabled>投稿を送る <span aria-hidden="true">→</span></button></div>
+      </form>
+    </section>
+    <section class="public-submissions" aria-labelledby="public-heading">
+      <div class="section-heading"><div><p class="eyebrow">COMMUNITY BOARD</p><h2 id="public-heading">承認された投稿</h2></div><p class="section-intro">確認・承認後に公開された要望や報告です。</p></div>
+      <p id="public-status" class="sr-only" role="status" aria-live="polite">承認された投稿を読み込んでいます。</p>
+      <div id="public-list" class="public-list"><p class="empty-state">承認された投稿を読み込んでいます…</p></div>
+      <p id="public-error" class="notice notice-error" hidden>投稿一覧を読み込めませんでした。</p>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="brand brand-footer" href="/"><span class="brand-mark" aria-hidden="true">す</span><span class="brand-name">Sumire<span> Android keyboard</span></span></a><p>Android 日本語キーボード Sumire</p><div class="footer-links"><a href="/settings.html">設定ガイド</a><a href="https://github.com/KazumaProject/JapaneseKeyboard" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></footer>
+</body></html>
