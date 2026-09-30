@@ -1,4 +1,4 @@
-import { cp, mkdir, readdir, rm } from "node:fs/promises";
+import { access, cp, mkdir, readdir, readFile, rm } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -10,12 +10,26 @@ const publicEntries = [
   "settings.html",
   "requests.html",
   "review.html",
+  "en",
   "_headers",
   "assets",
   "css",
   "js",
   "data",
 ];
+
+// A static copy alone succeeds even when a page's JavaScript is missing.
+// Check local script references before publishing an incomplete site.
+const pages = [
+  ...publicEntries.filter(entry => entry.endsWith(".html")),
+  ...(await readdir(path.join(root, "en"))).filter(entry => entry.endsWith(".html")).map(entry => `en/${entry}`),
+];
+for (const page of pages) {
+  const html = await readFile(path.join(root, page), "utf8");
+  for (const match of html.matchAll(/<script\b[^>]*\bsrc="(\/[^\"]+)"/g)) {
+    await access(path.join(root, match[1]));
+  }
+}
 
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });

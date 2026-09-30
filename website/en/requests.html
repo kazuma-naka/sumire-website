@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#fafafa">
+  <meta name="description" content="Submit a dictionary word, bug report, or feature request for Sumire without an account. Submissions are private until approved.">
+  <title>Requests and feedback — Sumire</title><script src="/js/theme.js"></script><link rel="stylesheet" href="/css/site.css"><script src="/js/site.js" defer></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer></script><script src="/js/requests.js" defer></script>
+</head>
+<body><a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="/en/" aria-label="Sumire home"><span class="brand-mark" aria-hidden="true">す</span><span class="brand-name">Sumire<span> Android keyboard</span></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu"><span></span><span></span></button><nav class="primary-nav" id="primary-nav" aria-label="Main navigation"><a href="/en/">Home</a><a href="/en/features.html">Features</a><a href="/en/settings.html">Settings</a><a href="/en/requests.html" aria-current="page">Requests</a><a class="language-switch" href="/requests.html" lang="ja" hreflang="ja" aria-label="日本語に切り替える">日本語</a><button class="theme-toggle" id="theme-toggle" hidden type="button" aria-label="Switch to dark mode" aria-pressed="false"><span class="theme-toggle-icon" data-theme-icon aria-hidden="true">☾</span><span data-theme-label>Dark</span></button><a class="nav-install" href="/en/#install">Get Sumire <span aria-hidden="true">↓</span></a></nav></div></header>
+  <main id="main" class="wrap page-main requests-main">
+    <header class="page-heading"><p class="eyebrow">REQUESTS &amp; FEEDBACK</p><h1>Send feedback to Sumire</h1><p>Submit a dictionary word, report a bug, or suggest a feature. No account is needed. We review submissions and publish only those we approve.</p></header>
+    <div class="privacy-note"><span class="privacy-icon" aria-hidden="true">✳</span><p>Your submission is stored for review. An email address is optional and will never be public. If approved, we will prepare a public title, description, and status after reviewing the details.</p></div>
+    <section class="request-panel" aria-labelledby="request-heading">
+      <h2 id="request-heading">Choose a submission type</h2>
+      <div class="request-types" role="group" aria-label="Submission type">
+        <button type="button" class="request-type is-selected" data-kind="dictionary" aria-pressed="true"><span class="type-icon" aria-hidden="true">あ</span><span><strong>Suggest a dictionary word</strong><small>Send a word and its reading</small></span></button>
+        <button type="button" class="request-type" data-kind="bug" aria-pressed="false"><span class="type-icon" aria-hidden="true">!</span><span><strong>Report a bug</strong><small>Describe what happened and how to reproduce it</small></span></button>
+        <button type="button" class="request-type" data-kind="feature" aria-pressed="false"><span class="type-icon" aria-hidden="true">＋</span><span><strong>Request a feature</strong><small>Describe what you would like to do</small></span></button>
+      </div>
+      <form id="submission-form" class="submission-form" novalidate>
+        <div id="form-fields"></div>
+        <div class="form-field"><label for="contact-email">Contact email <span class="optional">Optional · private</span></label><input type="email" id="contact-email" name="contactEmail" maxlength="254" autocomplete="email" placeholder="name@example.com"><small>We may use it if we need clarification. It will not appear in the public list.</small></div>
+        <div class="turnstile-wrap"><div id="turnstile-widget" aria-label="Spam prevention check"></div><p id="turnstile-hint" class="field-hint">Loading spam prevention check…</p></div>
+        <div id="form-message" class="form-message" role="status" aria-live="polite" hidden></div>
+        <div class="form-submit-row"><p>Submissions are reviewed before publication. Do not include personal or secret information.</p><button class="button button-primary" type="submit" id="submit-button" disabled>Submit <span aria-hidden="true">→</span></button></div>
+      </form>
+    </section>
+    <section class="public-submissions" aria-labelledby="public-heading">
+      <div class="section-heading"><div><p class="eyebrow">COMMUNITY BOARD</p><h2 id="public-heading">Approved submissions</h2></div><p class="section-intro">Requests and reports published after review and approval.</p></div>
+      <p id="public-status" class="sr-only" role="status" aria-live="polite">Loading approved submissions.</p>
+      <div id="public-list" class="public-list"><p class="empty-state">Loading approved submissions…</p></div>
+      <p id="public-error" class="notice notice-error" hidden>Could not load submissions.</p>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="brand brand-footer" href="/en/"><span class="brand-mark" aria-hidden="true">す</span><span class="brand-name">Sumire<span> Android keyboard</span></span></a><p>Sumire, a Japanese keyboard for Android</p><div class="footer-links"><a href="/en/settings.html">Settings guide</a><a href="https://github.com/KazumaProject/JapaneseKeyboard" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></footer>
+</body></html>

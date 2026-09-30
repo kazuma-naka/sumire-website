@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#fafafa">
+  <title>Moderation — Sumire</title><script src="/js/theme.js"></script><link rel="stylesheet" href="/css/site.css"><script src="/js/site.js" defer></script><script src="/js/review.js" defer></script>
+</head>
+<body><a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="/en/" aria-label="Sumire home"><span class="brand-mark" aria-hidden="true">す</span><span class="brand-name">Sumire<span> Android keyboard</span></span></a><nav class="primary-nav review-nav" aria-label="Main navigation"><a href="/en/">Back to home</a><a href="/en/requests.html">Public board</a><a class="language-switch" href="/review.html" lang="ja" hreflang="ja" aria-label="日本語に切り替える">日本語</a><button class="theme-toggle" id="theme-toggle" hidden type="button" aria-label="Switch to dark mode" aria-pressed="false"><span class="theme-toggle-icon" data-theme-icon aria-hidden="true">☾</span><span data-theme-label>Dark</span></button></nav></div></header>
+  <main id="main" class="wrap page-main review-main">
+    <header class="page-heading"><p class="eyebrow">PRIVATE MODERATION</p><h1>Review submissions</h1><p>Authenticate with the review token. The token is kept in this tab's memory only; it is not saved.</p></header>
+    <form id="admin-auth" class="auth-panel"><label for="admin-token">Admin token</label><div class="auth-input-row"><input id="admin-token" type="password" autocomplete="current-password" required><button class="button button-primary" type="submit">Load pending submissions</button></div><p id="admin-message" class="form-message" role="status" aria-live="polite" hidden></p></form>
+    <section id="pending-list" class="pending-list" aria-live="polite" aria-busy="false"></section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="brand brand-footer" href="/en/"><span class="brand-mark" aria-hidden="true">す</span><span class="brand-name">Sumire<span> Android keyboard</span></span></a><p>Private moderation area</p><div class="footer-links"><a href="/en/requests.html">Submission form</a></div></div></footer>
+</body></html>

@@ -1,131 +1,115 @@
+import { createSearchIndex, searchSettings } from "./settings-search.js";
+
+const japanese = document.documentElement.lang.startsWith("ja");
+const t = (ja, en) => japanese ? ja : en;
 const list = document.querySelector("#settings-list");
-const searchInput = document.querySelector("#settings-search");
-const categorySelect = document.querySelector("#settings-category");
-const editionSelect = document.querySelector("#settings-edition");
+const search = document.querySelector("#settings-search");
+const category = document.querySelector("#settings-category");
+const edition = document.querySelector("#settings-edition");
 const count = document.querySelector("#settings-count");
-const resultsTitle = document.querySelector("#results-title");
-const errorBox = document.querySelector("#settings-error");
+const title = document.querySelector("#results-title");
+const error = document.querySelector("#settings-error");
 const revision = document.querySelector("#source-revision");
 const sourceLink = document.querySelector("#source-link");
-let catalog = null;
+let index = [];
+let ready = false;
+let loadAttempts = 0;
 
-function textElement(tag, className, text) {
-  const element = document.createElement(tag);
-  if (className) element.className = className;
-  element.textContent = text;
-  return element;
+function element(tag, className, text) {
+  const node = document.createElement(tag);
+  node.className = className;
+  node.textContent = text;
+  return node;
 }
 
-function rangeText(item) {
-  const { min, max, step } = item.range || {};
-  if (min === null && max === null) return "";
-  let label = `${min ?? "…"} 〜 ${max ?? "…"}`;
-  if (step !== null && step !== undefined) label += `（刻み ${step}）`;
-  return label;
-}
-
-function editionMatches(item, filter) {
-  if (filter === "full-only") return item.edition === "Full only";
-  if (filter === "full") return item.edition === "Full only" || item.edition === "Full and Lite";
-  if (filter === "lite") return item.edition === "Full and Lite" || item.edition === "Lite only";
-  return true;
-}
-
-function editionLabel(edition) {
-  return ({ "Full and Lite": "Full / Lite", "Full only": "Full のみ", "Lite only": "Lite のみ" })[edition] || edition || "ソースから確認できず";
+function rangeText(range) {
+  if (!range || (range.min == null && range.max == null)) return "";
+  return `${range.min ?? "…"} – ${range.max ?? "…"}` +
+    (range.step == null ? "" : t(`（刻み ${range.step}）`, ` (step ${range.step})`));
 }
 
 function settingCard(item) {
-  const card = document.createElement("article");
-  card.className = "setting-card";
-  card.append(textElement("p", "setting-category", item.category));
-  card.append(textElement("h3", "", item.title));
-  if (item.purpose) card.append(textElement("p", "setting-purpose", item.purpose));
-
-  const metadata = document.createElement("dl");
-  metadata.className = "setting-meta";
-  const addMeta = (label, value) => {
-    metadata.append(textElement("dt", "", label));
-    const definition = document.createElement("dd");
-    if (label === "対象") {
-      const badge = textElement("span", `setting-badge${item.edition === "Full only" ? " full-only" : ""}`, editionLabel(value));
-      definition.append(badge);
-    } else if (label === "選択肢・範囲") {
-      definition.className = "setting-values";
-      definition.textContent = value;
-    } else {
-      definition.textContent = value;
-    }
-    metadata.append(definition);
+  const card = element("article", "setting-card", "");
+  card.append(element("p", "setting-category", item.category), element("h3", "", item.title));
+  if (item.purpose) card.append(element("p", "setting-purpose", item.purpose));
+  const metadata = element("dl", "setting-meta", "");
+  const add = (label, value) => {
+    metadata.append(element("dt", "", label));
+    const description = element("dd", "", "");
+    description.append(value);
+    metadata.append(description);
   };
-  addMeta("初期値", item.default || "ソースから確認できる初期値なし");
-  const choices = item.options?.length ? item.options.map((option) => option.label).join("、") : item.values?.join("、");
-  addMeta("選択肢・範囲", [choices || "固定の選択肢なし", rangeText(item)].filter(Boolean).join(" ／ "));
-  addMeta("対象", item.edition || "ソースから確認できず");
+  add(t("初期値", "Default"), String(item.default ?? t("確認できる初期値なし", "No source default")));
+  const choices = item.options?.length ? item.options.map(option => option.label) : item.values;
+  add(t("選択肢・範囲", "Choices / range"),
+    [choices?.join(" / "), rangeText(item.range)].filter(Boolean).join(" · ") || t("固定の選択肢なし", "No fixed choices"));
+  const labels = { "Full and Lite": "Full / Lite", "Full only": t("Full のみ", "Full only"), "Lite only": t("Lite のみ", "Lite only") };
+  add(t("対象", "Edition"), element("span", `setting-badge${item.edition === "Full only" ? " full-only" : ""}`,
+    labels[item.edition] || t("ソースから確認できず", "Not specified in source")));
   card.append(metadata);
-  if (item.dependency) card.append(textElement("p", "setting-purpose", `補足：${item.dependency}`));
-  card.append(textElement("code", "setting-key", item.key));
+  if (item.dependency) card.append(element("p", "setting-purpose", t("補足：", "Note: ") + item.dependency));
+  card.append(element("code", "setting-key", item.key));
   return card;
 }
 
 function render() {
-  if (!catalog) return;
-  const query = searchInput.value.trim().toLocaleLowerCase("ja");
-  const category = categorySelect.value;
-  const edition = editionSelect.value;
-  const filtered = catalog.items.filter((item) => {
-    if (category && item.category !== category) return false;
-    if (!editionMatches(item, edition)) return false;
-    const searchable = [item.title, item.purpose, item.category, item.default, item.kind, item.key,
-      item.edition, item.dependency, ...(item.values || []), ...(item.options || []).map((option) => option.label), rangeText(item)]
-      .filter(Boolean).join(" ").toLocaleLowerCase("ja");
-    return !query || searchable.includes(query);
-  });
-  list.replaceChildren();
-  if (filtered.length) {
-    const fragment = document.createDocumentFragment();
-    filtered.forEach((item) => fragment.append(settingCard(item)));
-    list.append(fragment);
-  } else {
-    list.append(textElement("p", "empty-results", "条件に合う設定はありません。検索語や絞り込みを変更してください。"));
-  }
-  count.textContent = `${filtered.length} 件`;
-  const categoryLabel = category || "すべてのカテゴリ";
-  resultsTitle.textContent = category ? `${category} の設定` : "すべての設定";
-  if (query) resultsTitle.textContent += `：「${searchInput.value.trim()}」`;
-  if (edition !== "all") count.setAttribute("aria-label", `${categoryLabel}から ${filtered.length} 件を表示`);
-  list.setAttribute("aria-busy", "false");
+  if (!ready) return;
+  const results = searchSettings(index, { query: search.value, category: category.value, edition: edition.value });
+  const fragment = document.createDocumentFragment();
+  if (results.length) results.forEach(item => fragment.append(settingCard(item)));
+  else fragment.append(element("p", "empty-results", t(
+    "条件に合う設定はありません。検索語や絞り込みを変更してください。",
+    "No matching settings. Try another search or change the filters.")));
+  list.replaceChildren(fragment);
+  count.textContent = t(`${results.length} 件 / 全 ${index.length} 件`, `${results.length} of ${index.length} settings`);
+  title.textContent = category.value || t("すべての設定", "All settings");
+  if (search.value.trim()) title.textContent = t("検索結果", "Search results");
 }
 
 async function loadCatalog() {
+  ready = false;
+  error.hidden = true;
+  list.setAttribute("aria-busy", "true");
+  count.textContent = t("設定を読み込んでいます…", "Loading settings…");
   try {
-    const response = await fetch("/data/settings.json", { headers: { Accept: "application/json" } });
+    // A retry also bypasses intermediaries that may have cached an invalid response.
+    const url = loadAttempts++ ? `/data/settings.json?retry=${Date.now()}` : "/data/settings.json";
+    const response = await fetch(url, { cache: "no-store", headers: { Accept: "application/json" } });
     if (!response.ok) throw new Error("settings_fetch_failed");
-    catalog = await response.json();
-    const categories = [...new Set(catalog.items.map((item) => item.category).filter(Boolean))].sort((a, b) => a.localeCompare(b, "ja"));
-    for (const value of categories) {
-      const option = document.createElement("option");
-      option.value = value;
-      option.textContent = value;
-      categorySelect.append(option);
+    const catalog = await response.json();
+    if (!Array.isArray(catalog.items) || !catalog.items.length ||
+        catalog.items.some(item => !item || typeof item.key !== "string" || typeof item.title !== "string")) {
+      throw new Error("invalid_catalog");
     }
-    const params = new URLSearchParams(location.search);
-    if (["full", "lite", "full-only"].includes(params.get("edition"))) editionSelect.value = params.get("edition");
-    if (catalog.source) {
-      const commit = catalog.source.commit;
-      revision.textContent = `確認日 ${catalog.source.verifiedOn} ・ commit ${commit}`;
-      sourceLink.href = `https://github.com/KazumaProject/JapaneseKeyboard/tree/${encodeURIComponent(commit)}`;
-      sourceLink.setAttribute("aria-label", `確認した Android ソース ${commit} を GitHub で開く`);
-    }
+    index = createSearchIndex(catalog.items);
+    const selectedCategory = category.value;
+    category.replaceChildren(new Option(t("すべてのカテゴリ", "All categories"), ""));
+    const categories = [...new Set(catalog.items.map(item => item.category).filter(Boolean))].sort((a, b) => a.localeCompare(b, "ja"));
+    categories.forEach(value => category.append(new Option(value, value)));
+    if (categories.includes(selectedCategory)) category.value = selectedCategory;
+    const source = catalog.source;
+    if (source?.commit) {
+      revision.textContent = t(`確認日 ${source.verifiedOn} · commit ${source.commit}`, `Verified ${source.verifiedOn} · commit ${source.commit}`);
+      sourceLink.href = `https://github.com/KazumaProject/JapaneseKeyboard/tree/${encodeURIComponent(source.commit)}`;
+    } else revision.textContent = t("ソース情報はありません。", "Source revision unavailable.");
+    ready = true;
     render();
-  } catch {
-    errorBox.hidden = false;
-    count.textContent = "読み込みに失敗しました";
+  } catch (cause) {
+    console.warn("Settings catalog could not be loaded:", cause.message);
+    list.replaceChildren();
+    error.hidden = false;
+    count.textContent = t("読み込みに失敗しました", "Could not load settings");
+    revision.textContent = t("ソース情報を読み込めませんでした。", "Could not load source information.");
+  } finally {
     list.setAttribute("aria-busy", "false");
   }
 }
 
-searchInput.addEventListener("input", render);
-categorySelect.addEventListener("change", render);
-editionSelect.addEventListener("change", render);
+const requestedEdition = new URLSearchParams(location.search).get("edition");
+if (["full", "lite", "full-only"].includes(requestedEdition)) edition.value = requestedEdition;
+search.addEventListener("input", event => { if (!event.isComposing) render(); });
+search.addEventListener("compositionend", render);
+category.addEventListener("change", render);
+edition.addEventListener("change", render);
+document.querySelector("#settings-retry").addEventListener("click", loadCatalog);
 loadCatalog();

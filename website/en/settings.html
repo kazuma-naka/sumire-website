@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#fafafa">
+  <meta name="description" content="Search Sumire Android settings by purpose, default, available choices, range, and edition.">
+  <title>Settings guide — Sumire</title><script src="/js/theme.js"></script><link rel="stylesheet" href="/css/site.css"><script src="/js/site.js" defer></script><script type="module" src="/js/settings.js"></script>
+</head>
+<body><a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="/en/" aria-label="Sumire home"><span class="brand-mark" aria-hidden="true">す</span><span class="brand-name">Sumire<span> Android keyboard</span></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu"><span></span><span></span></button><nav class="primary-nav" id="primary-nav" aria-label="Main navigation"><a href="/en/">Home</a><a href="/en/features.html">Features</a><a href="/en/settings.html" aria-current="page">Settings</a><a href="/en/requests.html">Requests</a><a class="language-switch" href="/settings.html" lang="ja" hreflang="ja" aria-label="日本語に切り替える">日本語</a><button class="theme-toggle" id="theme-toggle" hidden type="button" aria-label="Switch to dark mode" aria-pressed="false"><span class="theme-toggle-icon" data-theme-icon aria-hidden="true">☾</span><span data-theme-label>Dark</span></button><a class="nav-install" href="/en/#install">Get Sumire <span aria-hidden="true">↓</span></a></nav></div></header>
+  <main id="main" class="wrap page-main settings-main">
+    <header class="page-heading"><p class="eyebrow">SETTINGS GUIDE</p><h1>Explore Sumire settings</h1><p>Browse settings by purpose, default, available values or ranges, and Full or Lite availability. Search by name, description, or option.</p></header>
+    <section class="settings-app" aria-label="Settings catalog">
+      <aside class="settings-sidebar"><h2>Categories</h2><label class="sr-only" for="settings-category">Filter by category</label><select id="settings-category"><option value="">All categories</option></select><p class="sidebar-hint">Combine category and edition filters with your search. Source setting names are shown in Japanese.</p></aside>
+      <div class="settings-content">
+        <div class="settings-toolbar">
+          <label class="search-wrap"><span class="sr-only">Search settings</span><span aria-hidden="true" class="search-icon">⌕</span><input type="search" id="settings-search" placeholder="Search settings (e.g. conversion, dictionary, flick)" autocomplete="off"></label>
+          <label class="edition-select">Edition<select id="settings-edition"><option value="all">All editions</option><option value="full">Available in Full</option><option value="lite">Available in Lite</option><option value="full-only">Full only</option></select></label>
+        </div>
+        <div class="results-heading"><h2 id="results-title">All settings</h2><p id="settings-count" role="status" aria-live="polite">Loading settings…</p></div>
+        <p class="settings-source-note">Defaults, choices, and ranges are organized from the Android preference definitions. Some generated options vary by device. The setting names, descriptions, and source values below are kept in Japanese to match the app and its source exactly.</p>
+        <noscript><p class="notice">Enable JavaScript to search the settings guide.</p></noscript><div id="settings-list" class="settings-list" aria-busy="true"></div>
+        <div id="settings-error" class="notice notice-error" role="alert" hidden><p>Could not load settings. Check your connection and try again.</p><button id="settings-retry" class="button button-outline" type="button">Try again</button></div>
+      </div>
+    </section>
+    <aside class="source-card"><div><p class="eyebrow">SOURCE</p><h2>Check the Android source</h2><p>This guide is based on the Sumire Android repository's <code>pref_*.xml</code> resources and <code>AppPreference.kt</code>. Related Kotlin settings classes were checked for values generated at runtime.</p><p class="source-revision" id="source-revision">Loading source revision…</p></div><a class="button button-light" id="source-link" href="https://github.com/KazumaProject/JapaneseKeyboard" target="_blank" rel="noopener noreferrer">Verified source ↗</a></aside>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="brand brand-footer" href="/en/"><span class="brand-mark" aria-hidden="true">す</span><span class="brand-name">Sumire<span> Android keyboard</span></span></a><p>Sumire, a Japanese keyboard for Android</p><div class="footer-links"><a href="/en/requests.html">Community requests</a><a href="https://github.com/KazumaProject/JapaneseKeyboard" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></footer>
+</body></html>

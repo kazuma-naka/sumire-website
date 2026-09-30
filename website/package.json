@@ -12,7 +12,8 @@
     "dev": "pnpm build && wrangler pages dev dist --ip 127.0.0.1 --port 8788",
     "db:migrate:local": "wrangler d1 migrations apply sumire-requests --local",
     "db:migrate:remote": "wrangler d1 migrations apply sumire-requests --remote",
-    "deploy": "pnpm build && wrangler pages deploy dist"
+    "deploy": "pnpm build && wrangler pages deploy dist",
+    "test": "node --test tests/*.test.mjs"
   },
   "devDependencies": {
     "wrangler": "^4.0.0"
