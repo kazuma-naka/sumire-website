@@ -21,7 +21,7 @@ function updateThemeControl() {
   themeToggle.setAttribute("aria-label", action);
   themeToggle.querySelector("[data-theme-label]").textContent = label;
   themeToggle.querySelector("[data-theme-icon]").textContent = dark ? "☀" : "☾";
-  if (themeMeta) themeMeta.content = dark ? "#171719" : "#fafafa";
+  if (themeMeta) themeMeta.content = dark ? "#171719" : "#f7f3fc";
 }
 
 if (themeToggle) {
@@ -181,4 +181,21 @@ if (menuButton && navigation) {
   });
   if (document.readyState === "complete") preload();
   else window.addEventListener("load", preload, { once: true });
+})();
+
+// A tiny word playground, separate from the actual app previews.
+(() => {
+  const playground = document.querySelector('[data-word-play]');
+  if (!playground) return;
+  const keys = playground.querySelector('.word-play-keys');
+  const output = playground.querySelector('.word-play-output');
+  let animationFrame;
+  keys.querySelectorAll('button').forEach(key => key.addEventListener('click', () => {
+    output.textContent = key.dataset.message;
+    output.classList.remove('is-popping');
+    cancelAnimationFrame(animationFrame);
+    animationFrame = requestAnimationFrame(() => output.classList.add('is-popping'));
+  }));
+  output.addEventListener('animationend', () => output.classList.remove('is-popping'));
+  keys.hidden = false;
 })();
